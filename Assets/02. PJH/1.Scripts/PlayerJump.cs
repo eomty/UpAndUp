@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlayerJump : MonoBehaviour
 {
     public GameObject player;
-    public float jumpPower =20;
+    public float jumpPower = 0;
     public float distToGround = 0.6f;
     bool grounded = false;
-    bool onEnemy = false;
     bool jumpT = false;
     Rigidbody rig;
+    float touchnMoveDistance = 0;
 
     private void Start()
     {
@@ -28,29 +28,78 @@ public class PlayerJump : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if((grounded||onEnemy) && jumpT ==true )
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
+        {
+            Vector3 moveDistance = Input.GetTouch(0).deltaPosition;
+            touchnMoveDistance += moveDistance.y;
+        
+        }
+
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        {
+            jumpPower = touchnMoveDistance ;
+            Jump();
+
+            touchnMoveDistance = 0;
+        }
+
+        if ((grounded) && jumpT ==true )
         {
             rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
             jumpT = false;
          
         }
 
+     
+        /*  if (Input.touchCount > 0)
+          {
+              Touch touch = Input.GetTouch(0);
+              switch (touch.phase)
+              {
+                  case TouchPhase.Began:
+                      Debug.Log("TouchPhase Began!");
+
+                      break;
+
+                  case TouchPhase.Moved:
+                      Vector3 MoveDistancd = Input.GetTouch(0).deltaPosition;
+                      TouchnMoveDistance += (MoveDistancd.y*100);
+
+                      break;
+
+                  case TouchPhase.Ended:
+                      jumpPower = TouchnMoveDistance;
+                      Jump();
+
+
+                      break;
+
+                  case TouchPhase.Canceled:
+                      Debug.Log("TouchPhase Canceled!");
+
+                      break;
+              }
+          }*/
+
+
     }
 
     public void Jump()
     {
         jumpT = true;
-
+      
     }
 
     private void CheckGround()
     {
+        //Debug.DrawRay(gameObject.transform.position, Vector3.down * 100, Color.red);
         if (Physics.Raycast(gameObject.transform.position, Vector3.down, distToGround))
         {
             grounded = true;
             return;
         }
         grounded = false;
+        jumpT = false;
     }
 
 
