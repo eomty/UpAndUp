@@ -6,10 +6,10 @@ public class PlayerDie : MonoBehaviour
 {
    
     bool isDie = false;
-
+    GameManager GM;
     private void Start()
     {
-
+     
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class PlayerDie : MonoBehaviour
                 Debug.Log("Die");
 
                 isDie = true;
+                GameManager.GameDataSave(isDie);
              }
         }
            
@@ -33,4 +34,5 @@ public class PlayerDie : MonoBehaviour
         
         
     }
+
 }
