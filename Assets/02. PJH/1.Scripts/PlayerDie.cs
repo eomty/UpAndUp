@@ -29,6 +29,7 @@ public class PlayerDie : MonoBehaviour
 				isDie = true;
 				animator.SetTrigger("Die");
 				GameManager.GameDataSave(isDie);
+
              }
         }
            
