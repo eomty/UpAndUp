@@ -21,6 +21,6 @@ public class TextSet : MonoBehaviour
     {
         scoreText.text = "Score:" + GameManager.score;
         highText.text = "High:" + GameManager.high;
-        highScoreText.text = "HighScore:" + GameManager.highScore;
+        //highScoreText.text = "HighScore:" + GameManager.highScore;
     }
 }

@@ -8,9 +8,14 @@ public class PointCheck : MonoBehaviour
     bool pointCheck = false;
     Vector3 playerPosition;
     Vector3 EnemyPosition;
+	public Animator animator;
 
+	private void Start()
+	{
+		animator.GetComponent<Animator>();
+	}
 
-    private void OnCollisionEnter(Collision collision)
+	private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player"&&pointCheck == false)
         {
@@ -27,22 +32,25 @@ public class PointCheck : MonoBehaviour
             {
                 GameManager.score += 100;
                 Debug.Log("Perfact");
-            }
+				animator.SetTrigger("Perfect");
+			}
             else if(distanceCheck <0.3)
             {
                 GameManager.score += 50;
-                Debug.Log("Good");
-            }
+                Debug.Log("Excellent");
+				animator.SetTrigger("Excellent");
+			}
             else if(distanceCheck < 0.5)
             {
                 GameManager.score += 30;
-                Debug.Log("Nice");
-            }
+                Debug.Log("Good");
+				animator.SetTrigger("Good");
+			}
             else
             {
-                GameManager.score += 10;
                 Debug.Log("Bad");
-            }
+				animator.SetTrigger("Bad");
+			}
 
           
 

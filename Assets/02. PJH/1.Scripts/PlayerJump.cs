@@ -11,10 +11,12 @@ public class PlayerJump : MonoBehaviour
     bool jumpT = false;
     Rigidbody rig;
     float touchnMoveDistance = 0;
+	public Animator animator;
 
     private void Start()
     {
         rig = player.GetComponent<Rigidbody>();
+		animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -45,6 +47,7 @@ public class PlayerJump : MonoBehaviour
 
         if ((grounded) && jumpT ==true )
         {
+			animator.SetTrigger("Jump");
             rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
             jumpT = false;
          

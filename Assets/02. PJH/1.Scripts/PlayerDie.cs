@@ -7,9 +7,10 @@ public class PlayerDie : MonoBehaviour
    
     bool isDie = false;
     GameManager GM;
+	public Animator animator;
     private void Start()
     {
-     
+		animator.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -24,9 +25,10 @@ public class PlayerDie : MonoBehaviour
              {
                 Debug.Log(gameObject.transform.eulerAngles);
                 Debug.Log("Die");
-
-                isDie = true;
-                GameManager.GameDataSave(isDie);
+				animator.SetTrigger("Die");
+				isDie = true;
+				animator.SetTrigger("Die");
+				GameManager.GameDataSave(isDie);
              }
         }
            
