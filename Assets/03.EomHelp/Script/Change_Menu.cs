@@ -30,12 +30,14 @@ public class Change_Menu : MonoBehaviour
     {
         Main_C.SetActive(false);
         Option_C.SetActive(true);
+		Time.timeScale = 0f;
     }
 
     public void MainMenu()
     {
         Main_C.SetActive(true);
         Option_C.SetActive(false);
+		Time.timeScale = 1f;
     }
 
     public void TestSound()

@@ -16,7 +16,7 @@ public class Music : MonoBehaviour
 	void Start()
 	{
 		backVolume.onValueChanged.AddListener((value) => { OnBackVolumeValueChanged(value); });
-		backVolume.onValueChanged.AddListener(delegate { OnBackVolumeValueChanged(backVolume.value); });
+		sfxVolume.onValueChanged.AddListener(delegate { OnSFXVolumeChanged(sfxVolume.value); });
 	}
 
 	public void OnBackVolumeValueChanged(float value)
