@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -8,6 +9,9 @@ public class PlayerDie : MonoBehaviour
     bool isDie = false;
     GameManager GM;
 	public Animator animator;
+
+
+
     private void Start()
     {
 		animator.GetComponent<Animator>();
@@ -17,25 +21,34 @@ public class PlayerDie : MonoBehaviour
     void FixedUpdate()
     {
        if(isDie == false)
-        {
+        {   //플레이어의 기울기에 따라 사망
             if (gameObject.transform.eulerAngles.x < -50 ||
                 (gameObject.transform.eulerAngles.x<310 && gameObject.transform.eulerAngles.x > 50) ||
                 (gameObject.transform.eulerAngles.z  < 310 && gameObject.transform.eulerAngles.z > 50) ||
                 gameObject.transform.eulerAngles.z < -50)
              {
-                Debug.Log(gameObject.transform.eulerAngles);
-                Debug.Log("Die");
-				animator.SetTrigger("Die");
-				isDie = true;
-				animator.SetTrigger("Die");
-				GameManager.GameDataSave(isDie);
+                CallDie();
 
              }
         }
+
+       
            
 
         
         
     }
-
+    //죽었다는 표시
+    public void CallDie()
+    {
+        if(isDie == false)
+        {
+            Debug.Log("Die");
+            animator.SetTrigger("Die");
+            isDie = true;
+            animator.SetTrigger("Die");
+            GameManager.GameDataSave(isDie);
+        }
+      
+    }
 }
