@@ -1,51 +1,54 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDie : MonoBehaviour
 {
-
+   
     bool isDie = false;
     GameManager GM;
-    public PlayerAnimation MyAnimator;
-    public GameObject PopopC;
+	public Animator animator;
+
+
+
     private void Start()
     {
-        MyAnimator.GetComponentInChildren<PlayerAnimation>();
+		animator.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (isDie == false)
-        {
+       if(isDie == false)
+        {   //플레이어의 기울기에 따라 사망
             if (gameObject.transform.eulerAngles.x < -50 ||
-                (gameObject.transform.eulerAngles.x < 310 && gameObject.transform.eulerAngles.x > 50) ||
-                (gameObject.transform.eulerAngles.z < 310 && gameObject.transform.eulerAngles.z > 50) ||
+                (gameObject.transform.eulerAngles.x<310 && gameObject.transform.eulerAngles.x > 50) ||
+                (gameObject.transform.eulerAngles.z  < 310 && gameObject.transform.eulerAngles.z > 50) ||
                 gameObject.transform.eulerAngles.z < -50)
-            {
-                Debug.Log(gameObject.transform.eulerAngles);
-                Debug.Log("Die");
-                //MyAnimator.SetTrigger("Die");
-                isDie = true;
-                //MyAnimator.DieAnimaion();
-                MyAnimator.DieAnimation();
-                Handheld.Vibrate();
-                StartCoroutine(WaitResult());
-                GameManager.GameDataSave(isDie);
+             {
+                CallDie();
 
-            }
+             }
         }
 
+       
+           
 
-
-
+        
+        
     }
-    IEnumerator WaitResult()
+    //죽었다는 표시
+    public void CallDie()
     {
-
-        yield return new WaitForSeconds(1.5f);
-        PopopC.SetActive(true);
-
+        if(isDie == false)
+        {
+            Debug.Log("Die");
+            animator.SetTrigger("Die");
+            isDie = true;
+            animator.SetTrigger("Die");
+            GameManager.GameDataSave(isDie);
+        }
+      
     }
 }

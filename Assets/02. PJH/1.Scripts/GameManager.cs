@@ -6,20 +6,14 @@ using System;
 public class GameManager : MonoBehaviour
 {
 
-
+    //점수들
     static public int high = 0;
     static public int score = 0;
     static public int highScore= 0;
-    static public int highStair = 0;
-    static public int GHigh=0;
+    static public float nextInitHeight = 0;
+ 
 
-
-    // void Update()
-    //{
-    //    GScore = score;
-    //    GHigh = high;
-
-    //}
+    //플레이어가 죽을 경우 최고점수르 갱신하는 코드
     public static void GameDataSave(bool isDie)
     {
         if(isDie == true)
@@ -30,14 +24,8 @@ public class GameManager : MonoBehaviour
                 highScore = score;
 
             }
-            if (PlayerPrefs.GetInt("HighStair") < high)
-            {
-                highStair = high;
-
-            }
 
             PlayerPrefs.SetInt("HighScore", highScore);
-            PlayerPrefs.SetInt("HighStair", highStair);
             PlayerPrefs.Save();
         }
     }
