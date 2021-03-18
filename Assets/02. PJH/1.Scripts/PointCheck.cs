@@ -1,75 +1,52 @@
-﻿using System.Collections;
+﻿using JetBrains.Annotations;
+using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class PointCheck : MonoBehaviour
 {
-    bool pointCheck = false;
+   
+    public GameObject obstacle;
     Vector3 playerPosition;
     Vector3 EnemyPosition;
 	public PlayerAnimation animator;
+    float thisRadius;
     //public GameObject GM;
 
-    private void Awake()
+
+    public void PointGet(Collider collider)
     {
-        //GM.GetComponent<GameManager>();
-        GameManager.highScore = PlayerPrefs.GetInt("HighScore");
-    }
-    private void Start()
-	{
-		animator.GetComponent<PlayerAnimation>();
+        gameObject.transform.parent.GetComponent<
+            PlayerDie>().isCanDie = false;
 
-	}
+        float distanceCheck;
 
-    private void Update()
-    {
+        playerPosition = new Vector3(collider.gameObject.transform.position.x, 0, collider.gameObject.transform.position.z);
+        EnemyPosition = new Vector3(obstacle.transform.position.x, 0, obstacle.transform.position.z);
 
-    }
+        distanceCheck = Vector3.Distance(playerPosition, EnemyPosition);
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Player"&&pointCheck == false)
+        thisRadius = gameObject.GetComponent<RectTransform>().localScale.x / 2;//오브젝트의 반지름을 구하는 코드
+
+        if (distanceCheck <= thisRadius * 0.25)
         {
-            float distanceCheck;
-
-            playerPosition = new Vector3(collision.gameObject.transform.position.x,0, collision.gameObject.transform.position.z);
-            EnemyPosition = new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z);
-
-            distanceCheck = Vector3.Distance(playerPosition, EnemyPosition);
-
-
-
-            if(distanceCheck<0.1)
-            {
-                GameManager.score += 5 * GameManager.GHigh;
-                Debug.Log("Perfact");
-                animator.PerfactAnimation();
-			}
-            else if(distanceCheck <0.3)
-            {
-                GameManager.score += 3 * GameManager.GHigh;
-                Debug.Log("Excellent");
-                animator.ExcellentAnimation();
-			}
-            else if(distanceCheck < 0.5)
-            {
-                GameManager.score += 2 * GameManager.GHigh;
-                Debug.Log("Good");
-                animator.GoodAnimation();
-			}
-            else
-            {
-                //GameManager.score += 10 * GameManager.GHigh;
-                Debug.Log("Bad");
-                animator.BadAnimation();
-			}
-
-          
-
-            pointCheck = true;
-            
+            Debug.Log("Ex");
         }
-        
+        else if (distanceCheck <= thisRadius * 0.6)
+        {
+            Debug.Log("perfact");
+        }
+        else if (distanceCheck <= thisRadius * 0.8)
+        {
+            Debug.Log("good");
+        }
+        else
+        {
+            Debug.Log("Bad");
+        }
+
     }
+
 }
