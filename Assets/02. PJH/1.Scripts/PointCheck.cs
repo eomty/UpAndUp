@@ -31,7 +31,6 @@ public class PointCheck : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player"&&pointCheck == false)
         {
-            //플레이어가 장애물 위에 착지했을 때 플레이어와 장애물의 X,Z 위치를 비교하여 점수를 측정하는 코드
             float distanceCheck;
 
             playerPosition = new Vector3(collision.gameObject.transform.position.x,0, collision.gameObject.transform.position.z);

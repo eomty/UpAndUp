@@ -10,13 +10,12 @@ public class CubeMove : MonoBehaviour
     private Vector3 termP;
     public bool playerOn;
     public float speed;
-    bool isNotDie = true;
 
-    //플레이어의 위치를 받아 생성된 위치에서 플레이어까지의 거리에 두배를 저장하는 코드
+
+
     private void Start()
     {
         playerTr = player.GetComponent<Transform>();
-
 
         MPosition = playerTr.position - transform.position;
         termP = MPosition;
@@ -29,16 +28,8 @@ public class CubeMove : MonoBehaviour
     void Update()
     {
         CMove();
-
-        if (MPosition == gameObject.transform.position && isNotDie )
-        {
-            Debug.Log("죽었멍");
-            isNotDie = false;
-        }
-
     }
-    
-    //MPosition 만큼 이동하는 코드
+
     public void CMove()
     {
         if (playerOn == false)

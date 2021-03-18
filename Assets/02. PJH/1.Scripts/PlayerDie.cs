@@ -1,54 +1,51 @@
-﻿using JetBrains.Annotations;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerDie : MonoBehaviour
 {
-   
+
     bool isDie = false;
     GameManager GM;
-	public Animator animator;
-
-
-
+    public PlayerAnimation MyAnimator;
+    public GameObject PopopC;
     private void Start()
     {
-		animator.GetComponent<Animator>();
+        MyAnimator.GetComponentInChildren<PlayerAnimation>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-       if(isDie == false)
-        {   //플레이어의 기울기에 따라 사망
-            if (gameObject.transform.eulerAngles.x < -50 ||
-                (gameObject.transform.eulerAngles.x<310 && gameObject.transform.eulerAngles.x > 50) ||
-                (gameObject.transform.eulerAngles.z  < 310 && gameObject.transform.eulerAngles.z > 50) ||
-                gameObject.transform.eulerAngles.z < -50)
-             {
-                CallDie();
-
-             }
-        }
-
-       
-           
-
-        
-        
-    }
-    //죽었다는 표시
-    public void CallDie()
-    {
-        if(isDie == false)
+        if (isDie == false)
         {
-            Debug.Log("Die");
-            animator.SetTrigger("Die");
-            isDie = true;
-            animator.SetTrigger("Die");
-            GameManager.GameDataSave(isDie);
+            if (gameObject.transform.eulerAngles.x < -50 ||
+                (gameObject.transform.eulerAngles.x < 310 && gameObject.transform.eulerAngles.x > 50) ||
+                (gameObject.transform.eulerAngles.z < 310 && gameObject.transform.eulerAngles.z > 50) ||
+                gameObject.transform.eulerAngles.z < -50)
+            {
+                Debug.Log(gameObject.transform.eulerAngles);
+                Debug.Log("Die");
+                //MyAnimator.SetTrigger("Die");
+                isDie = true;
+                //MyAnimator.DieAnimaion();
+                MyAnimator.DieAnimation();
+                Handheld.Vibrate();
+                StartCoroutine(WaitResult());
+                GameManager.GameDataSave(isDie);
+
+            }
         }
-      
+
+
+
+
+    }
+    IEnumerator WaitResult()
+    {
+
+        yield return new WaitForSeconds(1.5f);
+        PopopC.SetActive(true);
+
     }
 }
