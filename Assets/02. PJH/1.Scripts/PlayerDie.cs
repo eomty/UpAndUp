@@ -4,38 +4,48 @@ using UnityEngine;
 
 public class PlayerDie : MonoBehaviour
 {
-   
+
     bool isDie = false;
     GameManager GM;
-	public Animator animator;
+    public PlayerAnimation MyAnimator;
+    public GameObject PopopC;
     private void Start()
     {
-		animator.GetComponent<Animator>();
+        MyAnimator.GetComponentInChildren<PlayerAnimation>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-       if(isDie == false)
+        if (isDie == false)
         {
             if (gameObject.transform.eulerAngles.x < -50 ||
-                (gameObject.transform.eulerAngles.x<310 && gameObject.transform.eulerAngles.x > 50) ||
-                (gameObject.transform.eulerAngles.z  < 310 && gameObject.transform.eulerAngles.z > 50) ||
+                (gameObject.transform.eulerAngles.x < 310 && gameObject.transform.eulerAngles.x > 50) ||
+                (gameObject.transform.eulerAngles.z < 310 && gameObject.transform.eulerAngles.z > 50) ||
                 gameObject.transform.eulerAngles.z < -50)
-             {
+            {
                 Debug.Log(gameObject.transform.eulerAngles);
                 Debug.Log("Die");
-				animator.SetTrigger("Die");
-				isDie = true;
-				animator.SetTrigger("Die");
-				GameManager.GameDataSave(isDie);
+                //MyAnimator.SetTrigger("Die");
+                isDie = true;
+                //MyAnimator.DieAnimaion();
+                MyAnimator.DieAnimation();
+                Handheld.Vibrate();
+                StartCoroutine(WaitResult());
+                GameManager.GameDataSave(isDie);
 
-             }
+            }
         }
-           
 
-        
-        
+
+
+
     }
+    IEnumerator WaitResult()
+    {
 
+        yield return new WaitForSeconds(1.5f);
+        PopopC.SetActive(true);
+
+    }
 }

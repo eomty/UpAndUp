@@ -15,8 +15,10 @@ public class Music : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
-		backVolume.onValueChanged.AddListener((value) => { OnBackVolumeValueChanged(value); });
-		sfxVolume.onValueChanged.AddListener(delegate { OnSFXVolumeChanged(sfxVolume.value); });
+		backVolume.onValueChanged.AddListener((value) =>
+		{ OnBackVolumeValueChanged(value); });
+		sfxVolume.onValueChanged.AddListener(delegate
+		{ OnSFXVolumeChanged(sfxVolume.value); });
 	}
 
 	public void OnBackVolumeValueChanged(float value)

@@ -7,9 +7,11 @@ public class Change_Menu : MonoBehaviour
 {
     public GameObject Option_C;
     public GameObject Main_C;
+    //public GameObject Start_Btn;
 
     public Slider[] volumeSliders;
     public AudioClip test1;
+    public GameObject image;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,20 @@ public class Change_Menu : MonoBehaviour
 		Time.timeScale = 1f;
     }
 
+    public void Developer()
+    {
+        image.SetActive(true);
+        //Start_Btn.SetActive(false);
+        //Option_C.SetActive(false);
+    }
+
+    public void Close()
+    {
+        //Start_Btn.SetActive(true);
+        //Option_C.SetActive(true);
+        image.SetActive(false);
+    }
+
     public void TestSound()
     {
         AudioManager.instance.PlaySound(test1, transform.position);
@@ -59,4 +75,5 @@ public class Change_Menu : MonoBehaviour
     {
         AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Sfx);
     }
+
 }

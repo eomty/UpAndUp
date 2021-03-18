@@ -20,7 +20,7 @@ public class TextSet : MonoBehaviour
     void Update()
     {
         scoreText.text = "Score:" + GameManager.score;
-        highText.text = "High:" + GameManager.high;
+        highText.text = "Stair:" + GameManager.high;
         highScoreText.text = "HighScore:" + GameManager.highScore;
     }
 }

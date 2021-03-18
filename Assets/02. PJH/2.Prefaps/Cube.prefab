@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5286693461150513606}
   - component: {fileID: 5286693461150513602}
   - component: {fileID: 5286693461150513613}
-  - component: {fileID: 8814462414876353150}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -111,6 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2671077957741720760, guid: 90dcd42142a799947bf799d3dada0cf7, type: 3}
   playerOn: 0
+  speed: 0
 --- !u!54 &5286693461150513613
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,18 +127,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!114 &8814462414876353150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5286693461150513607}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61366d7c9d0dc80419efc9a60601aff8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5286693461161955036
 GameObject:
   m_ObjectHideFlags: 0

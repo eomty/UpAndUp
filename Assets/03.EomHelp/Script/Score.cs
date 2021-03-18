@@ -5,28 +5,26 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Text score;
-    private int score_i;  
+    public Text highScore;
+    public Text highStair;
     // Start is called before the first frame update
     void Awake()
     {
-        
-        score_i = 0;
+
+        GameManager.highScore = PlayerPrefs.GetInt("HighScore");
+        GameManager.highStair = PlayerPrefs.GetInt("HighStair");
+        PlayerPrefs.Save();
     }
     void Start()
     {
-        //score.text = Test_s.score.ToString();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        score.text = "NowScore:" + score_i.ToString();
+        highStair.text = "BestStair:" + GameManager.highStair;
+        highScore.text = "BestScore:" + GameManager.highScore;
     }
 
-    public void AddScore()
-    {
-        score_i += 1;
-        Debug.Log("꺄르륵");
-    }
 }

@@ -25,7 +25,7 @@ public class CubeInit : MonoBehaviour
             Instantiate(initCube, new Vector3( xRange, GameManager.high +2, zRange), Quaternion.identity);
 
             GameManager.high += 1;
-
+            GameManager.GHigh += 1;
             isInit = true;
 
         }

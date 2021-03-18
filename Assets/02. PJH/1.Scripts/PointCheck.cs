@@ -8,14 +8,26 @@ public class PointCheck : MonoBehaviour
     bool pointCheck = false;
     Vector3 playerPosition;
     Vector3 EnemyPosition;
-	public Animator animator;
+	public PlayerAnimation animator;
+    //public GameObject GM;
 
-	private void Start()
+    private void Awake()
+    {
+        //GM.GetComponent<GameManager>();
+        GameManager.highScore = PlayerPrefs.GetInt("HighScore");
+    }
+    private void Start()
 	{
-		animator.GetComponent<Animator>();
+		animator.GetComponent<PlayerAnimation>();
+
 	}
 
-	private void OnCollisionEnter(Collision collision)
+    private void Update()
+    {
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.tag == "Player"&&pointCheck == false)
         {
@@ -30,26 +42,27 @@ public class PointCheck : MonoBehaviour
 
             if(distanceCheck<0.1)
             {
-                GameManager.score += 100;
+                GameManager.score += 5 * GameManager.GHigh;
                 Debug.Log("Perfact");
-				animator.SetTrigger("Perfect");
+                animator.PerfactAnimation();
 			}
             else if(distanceCheck <0.3)
             {
-                GameManager.score += 50;
+                GameManager.score += 3 * GameManager.GHigh;
                 Debug.Log("Excellent");
-				animator.SetTrigger("Excellent");
+                animator.ExcellentAnimation();
 			}
             else if(distanceCheck < 0.5)
             {
-                GameManager.score += 30;
+                GameManager.score += 2 * GameManager.GHigh;
                 Debug.Log("Good");
-				animator.SetTrigger("Good");
+                animator.GoodAnimation();
 			}
             else
             {
+                //GameManager.score += 10 * GameManager.GHigh;
                 Debug.Log("Bad");
-				animator.SetTrigger("Bad");
+                animator.BadAnimation();
 			}
 
           
@@ -57,5 +70,6 @@ public class PointCheck : MonoBehaviour
             pointCheck = true;
             
         }
+        
     }
 }
