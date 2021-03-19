@@ -9,6 +9,7 @@ public class PlayerJump : MonoBehaviour
     public float distToGround = 0.6f;
     bool grounded = false;
     bool jumpT = false;
+    bool isjump = false;
     Rigidbody rig;
     float touchnMoveDistance = 0;
 	public PlayerAnimation MyAnimator;
@@ -23,8 +24,7 @@ public class PlayerJump : MonoBehaviour
     void Update()
     {
         CheckGround();
-        Vector3 rayPosition = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y - 0.5f, gameObject.transform.position.z);
-        Debug.DrawRay(rayPosition, Vector3.down, Color.green, distToGround);
+
      
     }
 
@@ -45,45 +45,17 @@ public class PlayerJump : MonoBehaviour
             touchnMoveDistance = 0;
         }
 
-        if ((grounded) && jumpT ==true )
+        if (isjump ==true && jumpT ==true )
         {
 			
             rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
 			MyAnimator.JumpAnimaion();
 			jumpT = false;
-         
+            isjump = false;
         }
 
      
-        /*  if (Input.touchCount > 0)
-          {
-              Touch touch = Input.GetTouch(0);
-              switch (touch.phase)
-              {
-                  case TouchPhase.Began:
-                      Debug.Log("TouchPhase Began!");
-
-                      break;
-
-                  case TouchPhase.Moved:
-                      Vector3 MoveDistancd = Input.GetTouch(0).deltaPosition;
-                      TouchnMoveDistance += (MoveDistancd.y*100);
-
-                      break;
-
-                  case TouchPhase.Ended:
-                      jumpPower = TouchnMoveDistance;
-                      Jump();
-
-
-                      break;
-
-                  case TouchPhase.Canceled:
-                      Debug.Log("TouchPhase Canceled!");
-
-                      break;
-              }
-          }*/
+     
 
 
     }
@@ -92,6 +64,10 @@ public class PlayerJump : MonoBehaviour
     {
         jumpT = true;
       
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        isjump = true;
     }
 
     private void CheckGround()

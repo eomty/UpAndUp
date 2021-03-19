@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: -3317985342341441921}
   - component: {fileID: 3429725723833926808}
   - component: {fileID: -3062494608507752510}
+  - component: {fileID: -3120705083656044173}
   m_Layer: 0
   m_Name: SM_Bld_House_Chimney_Stone_Base_03
   m_TagString: Enemy
@@ -156,3 +157,16 @@ MonoBehaviour:
   - {fileID: 5885170180578559597}
   thisCube: {fileID: 5885170180578559597}
   initCube: {fileID: 5885170180578559597}
+--- !u!114 &-3120705083656044173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5885170180578559597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9818daf3ba70134fb22da73a3d9fe78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isCanDie: 0
