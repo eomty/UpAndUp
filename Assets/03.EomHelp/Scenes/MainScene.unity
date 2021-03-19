@@ -1041,7 +1041,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1009551149358236, guid: 1d3c25033160ed74d9114e7428ef7f59, type: 3}
       propertyPath: m_Name
-      value: Chr_FantasyHero_Preset_36
+      value: MainPlayer
       objectReference: {fileID: 0}
     - target: {fileID: 1009551149358236, guid: 1d3c25033160ed74d9114e7428ef7f59, type: 3}
       propertyPath: m_IsActive

@@ -18,8 +18,8 @@ public class PointCheck : MonoBehaviour
 
     public void PointGet(Collider collider)
     {
-        gameObject.transform.parent.GetComponent<
-            PlayerDie>().isCanDie = false;
+       // gameObject.transform.parent.GetComponent<
+            //PlayerDie>().isCanDie = false;
 
         float distanceCheck;
 
