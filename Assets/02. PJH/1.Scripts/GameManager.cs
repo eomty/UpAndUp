@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     static public int highScore= 0;
     static public int highStair = 0;
     static public int GHigh=0;
+    static public float nextInitHeight = 0;
+
 
 
     // void Update()
