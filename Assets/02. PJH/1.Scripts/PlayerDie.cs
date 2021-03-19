@@ -9,6 +9,9 @@ public class PlayerDie : MonoBehaviour
     GameManager GM;
     public PlayerAnimation MyAnimator;
     public GameObject PopopC;
+	public GameObject MainC;
+	private DeleteCanvas DC;
+	public GameObject ResultCharacter;
     private void Start()
     {
         MyAnimator.GetComponentInChildren<PlayerAnimation>();
@@ -30,6 +33,11 @@ public class PlayerDie : MonoBehaviour
                 isDie = true;
                 //MyAnimator.DieAnimaion();
                 MyAnimator.DieAnimation();
+				MainC.SetActive(false);
+				ResultCharacter.SetActive(true);
+				//DC.Delete();
+
+		
                 Handheld.Vibrate();
                 StartCoroutine(WaitResult());
                 GameManager.GameDataSave(isDie);
