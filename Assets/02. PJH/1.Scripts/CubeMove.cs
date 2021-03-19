@@ -10,13 +10,14 @@ public class CubeMove : MonoBehaviour
     private Vector3 termP;
     public bool playerOn;
     public float speed;
-
+    PlayerDie die;
+    bool isEnd = false ;
 
 
     private void Start()
     {
         playerTr = player.GetComponent<Transform>();
-
+        die = GetComponent<PlayerDie>();
         MPosition = playerTr.position - transform.position;
         termP = MPosition;
         MPosition = new Vector3(termP.x, transform.position.y, termP.z);
@@ -28,6 +29,14 @@ public class CubeMove : MonoBehaviour
     void Update()
     {
         CMove();
+        if (gameObject.transform.position == MPosition)
+        {
+            if(isEnd == false)
+            {
+                die.CallDie();
+                isEnd = true;
+            }
+        }
     }
 
     public void CMove()
