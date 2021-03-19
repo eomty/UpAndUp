@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     static public int highStair = 0;
     static public int GHigh=0;
     static public float nextInitHeight = 0;
-
+    static public bool isPlayerDie = false;
 
 
     // void Update()
