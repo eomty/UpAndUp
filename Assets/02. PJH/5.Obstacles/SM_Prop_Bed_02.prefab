@@ -208,9 +208,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d56c7baa7c01da41857d48aa5167d03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacleList: []
-  thisCube: {fileID: 0}
-  initCube: {fileID: 0}
+  obstacleList:
+  - {fileID: 5885170180578559597, guid: 157b7d24da007474390850782777a51c, type: 3}
+  - {fileID: 5885170180578559597, guid: 157b7d24da007474390850782777a51c, type: 3}
+  - {fileID: 2977225501599036696, guid: be8c5118276d82542a7cee67014140d8, type: 3}
+  - {fileID: 9173672756182013833}
+  - {fileID: 6760743332174944622, guid: 5f6659cb72c7e8d479faaf738ecaa77a, type: 3}
+  - {fileID: 2721150403222791948, guid: e0e63defc23cfe84db34d717aa9a08e3, type: 3}
+  - {fileID: 8121871769105963142, guid: 89c9af46ffe2b324087b4a282ab965eb, type: 3}
+  - {fileID: 9169391907542412120, guid: 58893651d072d7240a25ff0cd10ef03a, type: 3}
+  - {fileID: 8858532930851831859, guid: ae2affc2e2c67fb44b84a1bd20598a20, type: 3}
+  - {fileID: 5414777841082105252, guid: c21a0a87ca002b34591b7d45d59264d0, type: 3}
+  - {fileID: 5685546554919150648, guid: 48084204a79a7c04295be6fe6d7b6cc2, type: 3}
+  - {fileID: 3561716603368004554, guid: 58e948b715dbab34abd37a8d43b73725, type: 3}
+  - {fileID: 2038768609579943724, guid: 5897ffcf9e73af64ab165d21c0c9c97a, type: 3}
+  - {fileID: 2260462452152648447, guid: c95b2acc999c9fb44b67c22f3165279a, type: 3}
+  - {fileID: 3843752097849584624, guid: bf903bcf397f3d5489d316a0f621dd9d, type: 3}
+  - {fileID: 8651717727735473407, guid: 7da4e2202e2a27243aa3915ed9b512f9, type: 3}
+  - {fileID: 5712949031569462758, guid: 8704d3ef4051cf4498b5951d7574f6d0, type: 3}
+  - {fileID: 4100020560668120565, guid: aa7c5515026a0474585a761597330517, type: 3}
 --- !u!114 &6218805148556430195
 MonoBehaviour:
   m_ObjectHideFlags: 0
