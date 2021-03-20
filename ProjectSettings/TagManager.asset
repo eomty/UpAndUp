@@ -18,9 +18,9 @@ TagManager:
   - Popup
   - UI10
   - UI11
-  - 
-  - 
-  - 
+  - UI12
+  - UI13
+  - UI14
   - 
   - 
   - 
@@ -41,4 +41,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: 0
+    uniqueID: 1765554629
+    locked: 0
+  - name: 1
+    uniqueID: 3722918297
     locked: 0

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Change_Menu : MonoBehaviour
 {
     public GameObject Option_C;
-    public GameObject Main_C;
+    public GameObject Set_C;
     //public GameObject Start_Btn;
 
     public Slider[] volumeSliders;
@@ -31,14 +31,14 @@ public class Change_Menu : MonoBehaviour
     }
     public void OptionMenu()
     {
-        Main_C.SetActive(false);
+        Set_C.SetActive(false);
         Option_C.SetActive(true);
 		Time.timeScale = 0f;
     }
 
     public void MainMenu()
     {
-        Main_C.SetActive(true);
+        Set_C.SetActive(true);
         Option_C.SetActive(false);
 		Time.timeScale = 1f;
     }
