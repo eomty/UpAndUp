@@ -42,34 +42,36 @@ public class ObstacleScript : MonoBehaviour
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("Ex");
-                    GameManager.high += 1;
                     
                     CM.playerOn = true; //장애물의 움직임을 끄는 코드
-                    
+
+                    GameManager.score += 500 * GameManager.high;
                 }
                 else if (distanceCheck <= thisRadius * 0.6)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("perfact");
-                    GameManager.high += 1;
 
                     CM.playerOn = true; //장애물의 움직임을 끄는 코드
+
+                    GameManager.score += 300 * GameManager.high;
                 }
                 else if (distanceCheck <= thisRadius * 0.8)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("good");
-                    GameManager.high += 1;
 
                     CM.playerOn = true; //장애물의 움직임을 끄는 코드
+
+                    GameManager.score += 100 * GameManager.high;
                 }
                 else
                 {
                     cubeInit.ObstacleCreate();
-                    GameManager.high += 1;
                     die.CallDie();
                     CM.playerOn = true;
                     Debug.Log("Bad");
+                    GameManager.GameDataSave(GameManager.isPlayerDie);
                 }
 
                 isDone = true;
