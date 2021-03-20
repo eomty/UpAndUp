@@ -6,65 +6,80 @@ public class RandomAnimation : MonoBehaviour
 {
 	// Start is called before the first frame update
 
-	public Animator MainSceneAnimator;
+	public Animator animator;
 
 	public float r;
+	public bool loop;
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-		r= Random.Range(0, 12);
-		Debug.Log(r);
-
-		switch (r)
-		{
-			case 0:
-				MainSceneAnimator.SetTrigger("a0");
-				break;
-			case 1:
-				MainSceneAnimator.SetTrigger("a1");
-				break;
-			case 2:
-				MainSceneAnimator.SetTrigger("a2");
-				break;
-			case 3:
-				MainSceneAnimator.SetTrigger("a3");
-				break;
-			case 4:
-				MainSceneAnimator.SetTrigger("a4");
-				break;
-			case 5:
-				MainSceneAnimator.SetTrigger("a5");
-				break;
-			case 6:
-				MainSceneAnimator.SetTrigger("a6");
-				break;
-			case 7:
-				MainSceneAnimator.SetTrigger("a7");
-				break;
-			case 8:
-				MainSceneAnimator.SetTrigger("a8");
-				break;
-			case 9:
-				MainSceneAnimator.SetTrigger("a9");
-				break;
-			case 10:
-				MainSceneAnimator.SetTrigger("a10");
-				break;
-			case 11:
-				MainSceneAnimator.SetTrigger("a11");
-				break;
-			case 12:
-				MainSceneAnimator.SetTrigger("a12");
-				break;
-			default:
-		break;
-
-		}
-    }
+	private void Awake()
+	{
+		r = 20;
+	}
 }
+//    void Start()
+//    {
+
+//		switch (r)
+//		{
+
+
+//			case 0:
+//				animator.SetTrigger("a0");
+//				break;
+//			case 1:
+//				animator.SetTrigger("a1");
+//				break;
+//			case 2:
+//				animator.SetTrigger("a2");
+//				break;
+//			case 3:
+//				animator.SetTrigger("a3");
+//				break;
+//			case 4:
+//				animator.SetTrigger("a4");
+//				break;
+//			case 5:
+//				animator.SetTrigger("a5");
+//				break;
+//			case 6:
+//				animator.SetTrigger("a6");
+//				break;
+//			case 7:
+//				animator.SetTrigger("a7");
+//				break;
+//			case 8:
+//				animator.SetTrigger("a8");
+//				break;
+//			case 9:
+//				animator.SetTrigger("a9");
+//				break;
+//			case 10:
+//				animator.SetTrigger("a10");
+//				break;
+//			case 11:
+//				animator.SetTrigger("a11");
+//				break;
+//			case 12:
+//				animator.SetTrigger("a12");
+//				break;
+//			case 20:
+//				animator.SetTrigger("a20");
+//				break;
+//			default:
+//				break;
+//				//}
+//		}
+//		//loop = true;
+//		//r = Random.Range(0, 12);
+//	}
+//	// Update is called once per frame
+//	void Update()
+//    {
+
+//		//r= Random.Range(0, 12);
+//		//Debug.Log(r);
+
+//		//while (loop == true) {
+			
+//    }
+//}
