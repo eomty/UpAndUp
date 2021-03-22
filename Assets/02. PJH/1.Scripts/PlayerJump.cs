@@ -23,8 +23,8 @@ public class PlayerJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        CheckGround();
 
+       
      
     }
 
@@ -34,35 +34,48 @@ public class PlayerJump : MonoBehaviour
         {
             Vector3 moveDistance = Input.GetTouch(0).deltaPosition;
             touchnMoveDistance += moveDistance.y;
-        
+
         }
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
-            jumpPower = touchnMoveDistance ;
+            if(touchnMoveDistance<= 500)
+            {
+                touchnMoveDistance = 500;
+            }
+            else if(touchnMoveDistance >= 700)
+            {
+                touchnMoveDistance = 700;
+            }
+
+            jumpPower = touchnMoveDistance;
             Jump();
 
             touchnMoveDistance = 0;
         }
 
-        if (isjump ==true && jumpT ==true )
+        if (isjump ==true  && jumpT)
         {
 			
             rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
 			MyAnimator.JumpAnimaion();
-			jumpT = false;
             isjump = false;
+            jumpT = false;
+
         }
 
-     
-     
-
-
+  
     }
 
     public void Jump()
     {
-        jumpT = true;
+        if(isjump)
+        {
+            jumpT = true;
+        }
+
+
+
       
     }
     private void OnCollisionEnter(Collision collision)
@@ -70,17 +83,6 @@ public class PlayerJump : MonoBehaviour
         isjump = true;
     }
 
-    private void CheckGround()
-    {
-        //Debug.DrawRay(gameObject.transform.position, Vector3.down * 100, Color.red);
-        if (Physics.Raycast(gameObject.transform.position, Vector3.down, distToGround))
-        {
-            grounded = true;
-            return;
-        }
-        grounded = false;
-        jumpT = false;
-    }
 
 
 }
