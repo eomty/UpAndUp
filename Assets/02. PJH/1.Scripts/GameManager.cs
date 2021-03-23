@@ -14,14 +14,13 @@ public class GameManager : MonoBehaviour
     static public int GHigh=0;
     static public float nextInitHeight = 0;
     static public bool isPlayerDie = false;
+    GoogleAdsManager googleAdsManager;
 
+    private void Start()
+    {
+        googleAdsManager.ShowBanner();
+    }
 
-    // void Update()
-    //{
-    //    GScore = score;
-    //    GHigh = high;
-
-    //}
     public static void GameDataSave(bool isDie)
     {
         if(isDie == true)
