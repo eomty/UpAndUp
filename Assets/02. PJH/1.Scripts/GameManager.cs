@@ -6,7 +6,7 @@ using System;
 public class GameManager : MonoBehaviour
 {
 
-
+    static public float animationNum = 0;
     static public int high = 0;
     static public int score = 0;
     static public int highScore= 0;

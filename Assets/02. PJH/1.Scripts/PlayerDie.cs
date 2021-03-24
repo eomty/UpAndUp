@@ -6,14 +6,17 @@ public class PlayerDie : MonoBehaviour
 {
 
 
-    //public PlayerAnimation MyAnimator;
-    //public GameObject PopopC;
-	//public GameObject MainC;
-	//public GameObject ResultCharacter;
+    public PlayerAnimation MyAnimator;
+    public GameObject PopopC;
+	public GameObject MainC;
+	public GameObject ResultCharacter;
     public bool isCanDie;
     private void Start()
     {
         //MyAnimator.GetComponentInChildren<PlayerAnimation>();
+        PopopC = GameObject.Find("PopopC");
+        MainC = GameObject.Find("MainC");
+        ResultCharacter = GameObject.Find("ResultPlayer");
     }
 
 
@@ -24,11 +27,9 @@ public class PlayerDie : MonoBehaviour
             GameManager.isPlayerDie = true;
             Debug.Log(gameObject.transform.eulerAngles);
             Debug.Log("Die");
-            //MyAnimator.SetTrigger("Die");
-            //MyAnimator.DieAnimaion();
             //MyAnimator.DieAnimation();
-            //MainC.SetActive(false);
-           // ResultCharacter.SetActive(true);
+            MainC.SetActive(false);
+            //ResultCharacter.SetActive(true);
             //DC.Delete();
 
 
@@ -48,7 +49,8 @@ public class PlayerDie : MonoBehaviour
     {
 
         yield return new WaitForSeconds(1.5f);
-        //PopopC.SetActive(true);
+        PopopC.SetActive(true);
+        ResultCharacter.SetActive(true);
 
     }
 }

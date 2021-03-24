@@ -6,7 +6,12 @@ public class PlayerAnimation : MonoBehaviour
 {
 	public Animator playerAnimator;
 
-	public void JumpAnimaion()
+    private void Awake()
+    {
+		playerAnimator.GetComponent<PlayerAnimation>();
+    }
+
+    public void JumpAnimaion()
 	{
 		playerAnimator.SetTrigger("Jump");
 	}

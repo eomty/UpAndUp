@@ -13,11 +13,13 @@ public class ObstacleScript : MonoBehaviour
     bool isDone = false;
     CubeMove CM;
     PlayerDie die;
+    public PlayerAnimation MyAnimator;
     private void Awake()
     {
         cubeInit = GetComponent<CubeInit>();
         CM = GetComponent<CubeMove>();
         die = GetComponent<PlayerDie>();
+        //MyAnimator = GetComponent<PlayerAnimation>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,19 +40,21 @@ public class ObstacleScript : MonoBehaviour
                 thisRadius = Mathf.Pow(GetComponent<BoxCollider>().size.x * GetComponent<BoxCollider>().size.z, 0.5f) /2;//오브젝트의 반지름을 구하는 코드
 
                 Debug.Log(thisRadius);
-                if (distanceCheck <= thisRadius * 0.25)
+                if (distanceCheck <= thisRadius * 0.6)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("Ex");
+                    MyAnimator.ExcellentAnimation();
                     
                     CM.playerOn = true; //장애물의 움직임을 끄는 코드
 
                     GameManager.score += 500 * GameManager.high;
                 }
-                else if (distanceCheck <= thisRadius * 0.6)
+                else if (distanceCheck <= thisRadius * 0.25)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("perfact");
+                    MyAnimator.PerfactAnimation();
 
                     CM.playerOn = true; //장애물의 움직임을 끄는 코드
 
@@ -60,6 +64,7 @@ public class ObstacleScript : MonoBehaviour
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("good");
+                    MyAnimator.GoodAnimation();
 
                     CM.playerOn = true; //장애물의 움직임을 끄는 코드
 
@@ -67,10 +72,12 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else
                 {
+
                     cubeInit.ObstacleCreate();
                     die.CallDie();
                     CM.playerOn = true;
                     Debug.Log("Bad");
+                    
                     GameManager.GameDataSave(GameManager.isPlayerDie);
                 }
 
