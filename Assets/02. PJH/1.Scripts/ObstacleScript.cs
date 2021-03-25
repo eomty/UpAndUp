@@ -4,22 +4,25 @@ using UnityEngine;
 
 public class ObstacleScript : MonoBehaviour
 {
-    
+    public GameObject player;
     Vector3 playerPosition;
     Vector3 EnemyPosition;
-    //public PlayerAnimation animator;
     float thisRadius;
     CubeInit cubeInit;
     bool isDone = false;
     CubeMove CM;
     PlayerDie die;
-    public PlayerAnimation MyAnimator;
+    PlayerAnimation playAnimation;
+
+
     private void Awake()
     {
         cubeInit = GetComponent<CubeInit>();
         CM = GetComponent<CubeMove>();
         die = GetComponent<PlayerDie>();
-        //MyAnimator = GetComponent<PlayerAnimation>();
+
+        playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
+  
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -38,15 +41,16 @@ public class ObstacleScript : MonoBehaviour
                 Debug.Log(distanceCheck);
 
                 thisRadius = Mathf.Pow(GetComponent<BoxCollider>().size.x * GetComponent<BoxCollider>().size.z, 0.5f) /2;//오브젝트의 반지름을 구하는 코드
-
+                
                 Debug.Log(thisRadius);
                 if (distanceCheck <= thisRadius * 0.6)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("Ex");
-                    MyAnimator.ExcellentAnimation();
-                    
-                    CM.playerOn = true; //장애물의 움직임을 끄는 코드
+                    CM.playerOn = true;
+                    playAnimation.ExcellentAnimation();
+
+                    //장애물의 움직임을 끄는 코드
 
                     GameManager.score += 500 * GameManager.high;
                 }
@@ -54,9 +58,10 @@ public class ObstacleScript : MonoBehaviour
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("perfact");
-                    MyAnimator.PerfactAnimation();
+                    CM.playerOn = true;
+                    playAnimation.PerfactAnimation();
 
-                    CM.playerOn = true; //장애물의 움직임을 끄는 코드
+                    //장애물의 움직임을 끄는 코드
 
                     GameManager.score += 300 * GameManager.high;
                 }
@@ -64,9 +69,10 @@ public class ObstacleScript : MonoBehaviour
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("good");
-                    MyAnimator.GoodAnimation();
+                    CM.playerOn = true;
+                    playAnimation.GoodAnimation();
 
-                    CM.playerOn = true; //장애물의 움직임을 끄는 코드
+                    //장애물의 움직임을 끄는 코드
 
                     GameManager.score += 100 * GameManager.high;
                 }
@@ -77,7 +83,7 @@ public class ObstacleScript : MonoBehaviour
                     die.CallDie();
                     CM.playerOn = true;
                     Debug.Log("Bad");
-                    
+                    playAnimation.DieAnimation();
                     GameManager.GameDataSave(GameManager.isPlayerDie);
                 }
 

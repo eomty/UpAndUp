@@ -17,15 +17,7 @@ public class PlayerJump : MonoBehaviour
     private void Start()
     {
         rig = player.GetComponent<Rigidbody>();
-		MyAnimator =GetComponentInChildren<PlayerAnimation>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-       
-     
+		MyAnimator = GetComponentInChildren<PlayerAnimation>();
     }
 
     private void FixedUpdate()

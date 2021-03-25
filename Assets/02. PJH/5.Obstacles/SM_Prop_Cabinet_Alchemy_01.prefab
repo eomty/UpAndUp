@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 8133495316834001706}
   m_Layer: 0
   m_Name: SM_Prop_Cabinet_Alchemy_01
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -412,6 +412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1f79d97b90ee04498c16a240c4c6073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 751180531623151177, guid: 8fe4cc879570096499176d307bea2536, type: 3}
 --- !u!1 &2721204164153754076
 GameObject:
   m_ObjectHideFlags: 0
