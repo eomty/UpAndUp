@@ -8,14 +8,14 @@ public class PlayerDie : MonoBehaviour
 
     public GameObject PopopC;
 	public GameObject MainC;
-	public GameObject ResultCharacter;
+	//public GameObject ResultCharacter;
     public bool isCanDie;
     private void Start()
     {
         //PopopC = GameObject.FindWithTag("PopopC");
         MainC = GameObject.FindWithTag("MainC");
         //ResultCharacter = GameObject.FindWithTag("ResultPlayer");
-       ResultCharacter = GameObject.FindWithTag("ResultPlayer").transform.Find("ResultPlayer2").gameObject;
+       //ResultCharacter = GameObject.FindWithTag("ResultPlayer").transform.Find("ResultPlayer2").gameObject;
        PopopC = GameObject.FindWithTag("PopupC").transform.Find("Popup").gameObject;
         //playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
     }
@@ -51,7 +51,7 @@ public class PlayerDie : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
         PopopC.SetActive(true);
-        ResultCharacter.SetActive(true);
+        //ResultCharacter.SetActive(true);
 
     }
 }

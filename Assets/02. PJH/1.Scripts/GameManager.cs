@@ -5,7 +5,8 @@ using System;
 
 public class GameManager : MonoBehaviour
 {
-
+    static public float TextNum = 0;
+    static public float scoreNum = 0;
     static public float animationNum = 0;
     static public int high = 0;
     static public int score = 0;

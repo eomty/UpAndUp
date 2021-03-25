@@ -10,6 +10,7 @@ TagManager:
   - MainC
   - ResultPlayer
   - PopupC
+  - reset
   layers:
   - Default
   - TransparentFX

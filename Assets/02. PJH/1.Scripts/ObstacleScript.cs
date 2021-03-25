@@ -13,6 +13,7 @@ public class ObstacleScript : MonoBehaviour
     CubeMove CM;
     PlayerDie die;
     PlayerAnimation playAnimation;
+    ResetText resettext;
 
 
     private void Awake()
@@ -20,7 +21,7 @@ public class ObstacleScript : MonoBehaviour
         cubeInit = GetComponent<CubeInit>();
         CM = GetComponent<CubeMove>();
         die = GetComponent<PlayerDie>();
-
+        resettext = GameObject.Find("PxExGoBad").GetComponent<ResetText>();
         playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
   
     }
@@ -49,21 +50,27 @@ public class ObstacleScript : MonoBehaviour
                     Debug.Log("Ex");
                     CM.playerOn = true;
                     playAnimation.ExcellentAnimation();
+                    GameManager.TextNum = 2;
+                    resettext.TextCreate();
 
                     //장애물의 움직임을 끄는 코드
 
-                    GameManager.score += 500 * GameManager.high;
+                    GameManager.scoreNum = 300;
+                    GameManager.score += 300 * GameManager.high;
                 }
                 else if (distanceCheck <= thisRadius * 0.25)
                 {
                     cubeInit.ObstacleCreate();
-                    Debug.Log("perfact");
+                    Debug.Log("perfect");
                     CM.playerOn = true;
                     playAnimation.PerfactAnimation();
+                    GameManager.TextNum = 1;
+                    resettext.TextCreate();
 
                     //장애물의 움직임을 끄는 코드
 
-                    GameManager.score += 300 * GameManager.high;
+                    GameManager.scoreNum = 500;
+                    GameManager.score += 500 * GameManager.high;
                 }
                 else if (distanceCheck <= thisRadius * 0.9)
                 {
@@ -71,14 +78,17 @@ public class ObstacleScript : MonoBehaviour
                     Debug.Log("good");
                     CM.playerOn = true;
                     playAnimation.GoodAnimation();
+                    GameManager.TextNum = 3;
+                    resettext.TextCreate();
 
                     //장애물의 움직임을 끄는 코드
-
+                    GameManager.scoreNum = 100;
                     GameManager.score += 100 * GameManager.high;
                 }
                 else
                 {
-
+                    GameManager.TextNum = 4;
+                    resettext.TextCreate();
                     cubeInit.ObstacleCreate();
                     die.CallDie();
                     CM.playerOn = true;

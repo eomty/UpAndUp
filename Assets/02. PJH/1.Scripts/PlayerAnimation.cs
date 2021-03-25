@@ -41,6 +41,11 @@ public class PlayerAnimation : MonoBehaviour
 		playerAnimator.SetTrigger("Bad");
 	}
 
+	public void SitAnimation()
+	{
+		playerAnimator.SetTrigger("Sit");
+	}
+
 	//public void JumpAnimaion()
 	//{
 	//	playerAnimator.SetTrigger("Jump");

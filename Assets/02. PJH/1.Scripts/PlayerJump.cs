@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class PlayerJump : MonoBehaviour
+public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandler
 {
     public GameObject player;
     public float jumpPower = 0;
@@ -14,6 +15,10 @@ public class PlayerJump : MonoBehaviour
     float touchnMoveDistance = 0;
 	public PlayerAnimation MyAnimator;
 
+    //public void IPointerDownHandler()
+    //{
+        
+    //}
     private void Start()
     {
         rig = player.GetComponent<Rigidbody>();
@@ -42,6 +47,7 @@ public class PlayerJump : MonoBehaviour
 
             jumpPower = touchnMoveDistance;
             Jump();
+            GameManager.TextNum = 0;
 
             touchnMoveDistance = 0;
         }
@@ -75,6 +81,10 @@ public class PlayerJump : MonoBehaviour
         isjump = true;
     }
 
+    public void SitDown()
+    {
+        MyAnimator.SitAnimation();
+    }
 
 
 }

@@ -9,6 +9,7 @@ public class TextSet : MonoBehaviour
     public Text scoreText;
     public Text highText;
     public Text highScoreText;
+    public Text scoreX;
     // Update is called once per frame
 
     private void Start()
@@ -22,5 +23,6 @@ public class TextSet : MonoBehaviour
         scoreText.text = "Score:" + GameManager.score;
         highText.text = "Stair:" + GameManager.high;
         highScoreText.text = "HighScore:" + GameManager.highScore;
+        scoreX.text = (GameManager.scoreNum + " X " + GameManager.high);
     }
 }

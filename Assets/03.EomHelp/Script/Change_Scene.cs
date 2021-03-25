@@ -23,6 +23,7 @@ public class Change_Scene : MonoBehaviour
 		GameManager.score = 0;
 		GameManager.Ghigh= 0;
 		GameManager.isPlayerDie = false;
+		GameManager.scoreNum = 0;
 	}
 
 	public void ToStartScene(string sceneName)
@@ -32,5 +33,6 @@ public class Change_Scene : MonoBehaviour
 		GameManager.score = 0;
 		GameManager.Ghigh = 0;
 		GameManager.isPlayerDie = false;
+		GameManager.scoreNum = 0;
 	}
 }
