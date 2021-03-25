@@ -32,6 +32,7 @@ public class CubeInit : MonoBehaviour
         Instantiate(obstacleList[initCubeNum], new Vector3(xRange, GameManager.nextInitHeight + 0.1f, zRange),
             Quaternion.Euler(Quaternion.identity.x, Random.Range(0, 360), Quaternion.identity.z));
         GameManager.high += 1;
+        GameManager.Ghigh += 1;
     }
 
 

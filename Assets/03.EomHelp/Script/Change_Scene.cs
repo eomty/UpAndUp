@@ -21,7 +21,8 @@ public class Change_Scene : MonoBehaviour
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		GameManager.high = 0;
 		GameManager.score = 0;
-		GameManager.GHigh= 0;
+		GameManager.Ghigh= 0;
+		GameManager.isPlayerDie = false;
 	}
 
 	public void ToStartScene(string sceneName)
@@ -29,6 +30,7 @@ public class Change_Scene : MonoBehaviour
 		SceneManager.LoadScene(sceneName);
 		GameManager.high = 0;
 		GameManager.score = 0;
-		GameManager.GHigh = 0;
+		GameManager.Ghigh = 0;
+		GameManager.isPlayerDie = false;
 	}
 }

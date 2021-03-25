@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     static public int score = 0;
     static public int highScore= 0;
     static public int highStair = 0;
-    static public int GHigh=0;
+    static public int Ghigh=0;
     static public float nextInitHeight = 0;
     static public bool isPlayerDie = false;
     GoogleAdsManager googleAdsManager;
@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     {
         if(isDie == true)
         {
-            Debug.Log((PlayerPrefs.GetInt("HighScore")));
+            //Debug.Log((PlayerPrefs.GetInt("HighScore")));    임시로 제거함 간결하게
             if (PlayerPrefs.GetInt("HighScore")< score)
             {
                 highScore = score;

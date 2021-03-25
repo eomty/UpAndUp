@@ -174,7 +174,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Salsa Dancing7
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 5142305673968192963}
@@ -291,7 +291,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Samba Dancing6
-  m_Speed: 2
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 2685212366373180531}
@@ -440,7 +440,7 @@ AnimatorStateMachine:
     m_Position: {x: -110, y: 180, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7915661646227981777}
-    m_Position: {x: -140, y: 270, z: 0}
+    m_Position: {x: -100, y: 260, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 6177136479831049158}
@@ -878,8 +878,8 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Moonwalk1
-  m_Speed: 0.1
-  m_CycleOffset: 0
+  m_Speed: 0.5
+  m_CycleOffset: 1
   m_Transitions:
   - {fileID: 8444342192620386550}
   m_StateMachineBehaviours:

@@ -185,4 +185,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9818daf3ba70134fb22da73a3d9fe78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PopopC: {fileID: 5760989654600477852, guid: 2377f622b5cd4f94697843dd23de4d6f, type: 3}
+  MainC: {fileID: 5233054538984988677, guid: 8b5bbaf59b1f0d74db1df866fbe5d75b, type: 3}
+  ResultCharacter: {fileID: 7009489165239259619, guid: dde878bd4d3632745adc9f40ac8e024c,
+    type: 3}
   isCanDie: 0

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3493065942110573454}
   - component: {fileID: 3493065942110573455}
   m_Layer: 0
-  m_Name: Player 1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,8 @@ MonoBehaviour:
   player: {fileID: 3493065942110573488}
   jumpPower: 600
   distToGround: 0.6
-  MyAnimator: {fileID: 0}
+  MyAnimator: {fileID: 751180531623151179, guid: 8fe4cc879570096499176d307bea2536,
+    type: 3}
 --- !u!114 &3493065942110573455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,4 +105,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9818daf3ba70134fb22da73a3d9fe78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
+  PopopC: {fileID: 5760989654600477852, guid: 2377f622b5cd4f94697843dd23de4d6f, type: 3}
+  MainC: {fileID: 5233054538984988677, guid: 8b5bbaf59b1f0d74db1df866fbe5d75b, type: 3}
+  ResultCharacter: {fileID: 7009489165239259619, guid: dde878bd4d3632745adc9f40ac8e024c,
+    type: 3}
+  isCanDie: 0

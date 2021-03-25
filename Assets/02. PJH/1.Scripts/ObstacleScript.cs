@@ -38,11 +38,11 @@ public class ObstacleScript : MonoBehaviour
                 EnemyPosition = new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z);
 
                 distanceCheck = Vector3.Distance(playerPosition, EnemyPosition);
-                Debug.Log(distanceCheck);
+                Debug.Log("0.9이상 사망"+distanceCheck);
 
                 thisRadius = Mathf.Pow(GetComponent<BoxCollider>().size.x * GetComponent<BoxCollider>().size.z, 0.5f) /2;//오브젝트의 반지름을 구하는 코드
                 
-                Debug.Log(thisRadius);
+                //Debug.Log(thisRadius);                   //임시로 제거
                 if (distanceCheck <= thisRadius * 0.6)
                 {
                     cubeInit.ObstacleCreate();
@@ -65,7 +65,7 @@ public class ObstacleScript : MonoBehaviour
 
                     GameManager.score += 300 * GameManager.high;
                 }
-                else if (distanceCheck <= thisRadius * 0.8)
+                else if (distanceCheck <= thisRadius * 0.9)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("good");

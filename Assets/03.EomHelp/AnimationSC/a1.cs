@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class a1 : StateMachineBehaviour
 {
+	//public GameObject mainCha;
 
 	private void Awake()
 	{
-		//a.GetComponent<RandomAnimation>();
+		//mainCha.transform.rotation = Quaternion.Euler(0, 90f, 0);
 
 	}
 	private void OnStateExit()

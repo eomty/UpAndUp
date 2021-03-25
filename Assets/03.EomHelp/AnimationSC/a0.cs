@@ -5,15 +5,17 @@ using UnityEngine;
 public class a0 : StateMachineBehaviour
 {
 
-	private void Awake()
+	private void Awake() //A0만 써야함
 	{
+		GameManager.animationNum = 0;
 		GameManager.animationNum = Random.Range(1, 13);
 		Debug.Log(GameManager.animationNum);
 
 	}
 	private void OnStateExit()
 	{
-
+		GameManager.animationNum = Random.Range(1, 13);
+		Debug.Log(GameManager.animationNum);
 
 
 

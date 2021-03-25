@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Enemy
   - Model
+  - PopopC
+  - MainC
+  - ResultPlayer
+  - PopupC
   layers:
   - Default
   - TransparentFX
