@@ -47,6 +47,8 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
 
             jumpPower = touchnMoveDistance;
             Jump();
+            //GameManager.reAnimationNum = Random.Range(0, 7);
+           // Debug.Log("reAni: " + GameManager.reAnimationNum);
             GameManager.TextNum = 0;
 
             touchnMoveDistance = 0;
@@ -57,6 +59,8 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
 			
             rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
 			MyAnimator.JumpAnimaion();
+            //GameManager.reAnimationNum = Random.Range(0, 7);
+            //Debug.Log("reAni: " + GameManager.reAnimationNum);
             isjump = false;
             jumpT = false;
 

@@ -87,7 +87,7 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else
                 {
-                    GameManager.TextNum = 4;
+                    GameManager.TextNum = 4; //Not Canvas so Not Bad
                     resettext.TextCreate();
                     cubeInit.ObstacleCreate();
                     die.CallDie();

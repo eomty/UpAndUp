@@ -31,19 +31,19 @@ public class ResetText : MonoBehaviour
         {
             case 1:
                 Instantiate(textList1, new Vector3(0, 0, 0), Quaternion.identity,
-                    GameObject.Find("Canvas").transform);
+                    GameObject.Find("MainCC").transform);
                 break;
             case 2:
                 Instantiate(textList2, new Vector3(0, 0, 0), Quaternion.identity,
-                    GameObject.Find("Canvas").transform);
+                    GameObject.Find("MainCC").transform);
                 break;
             case 3:
                 Instantiate(textList3, new Vector3(0, 0, 0), Quaternion.identity,
-                    GameObject.Find("Canvas").transform);
+                    GameObject.Find("MainCC").transform);
                 break;
             case 4:
-                Instantiate(textList4, new Vector3(0, 0, 0), Quaternion.identity,
-                    GameObject.Find("Canvas").transform);
+                //Instantiate(textList4, new Vector3(0, 0, 0), Quaternion.identity,
+                    //GameObject.Find("Canvas").transform);
                 break;
         }
 

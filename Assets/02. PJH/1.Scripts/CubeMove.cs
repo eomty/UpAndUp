@@ -9,6 +9,8 @@ public class CubeMove : MonoBehaviour
     private Vector3 MPosition;
     private Vector3 termP;
     public bool playerOn;
+    //public bool playerOn2;
+
     public float speed;
     PlayerDie die;
     bool isEnd = false ;
@@ -22,6 +24,7 @@ public class CubeMove : MonoBehaviour
         termP = MPosition;
         MPosition = new Vector3(termP.x, transform.position.y, termP.z);
         playerOn = false;
+        //playerOn2 = false;
         speed = Random.Range(4,4);
      }
 
@@ -46,6 +49,11 @@ public class CubeMove : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, MPosition, speed * Time.deltaTime);
         }
 
+    }
+
+    public void DontMove()
+    {
+        speed = 0f;
     }
 
 

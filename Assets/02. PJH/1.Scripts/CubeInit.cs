@@ -6,7 +6,7 @@ public class CubeInit : MonoBehaviour
 {
     public List<GameObject> obstacleList;
  
-    bool isInit;
+   public  bool isInit;
     int initCubeNum;
 
     private void Awake()
@@ -18,22 +18,24 @@ public class CubeInit : MonoBehaviour
 
     public void ObstacleCreate()
     {
-        float cubeHeight = gameObject.GetComponent<MeshRenderer>().bounds.size.y;
+        {
+            float cubeHeight = gameObject.GetComponent<MeshRenderer>().bounds.size.y;
 
-        float xRange = Random.Range(-8, 8); //생성 범위
-        float zRange = Random.Range(7, 12);
+            float xRange = Random.Range(-8, 8); //생성 범위
+            float zRange = Random.Range(7, 12);
 
 
-        GameManager.nextInitHeight += cubeHeight;
-        // Debug.Log(GameManager.nextInitHeight);
+            GameManager.nextInitHeight += cubeHeight;
+            // Debug.Log(GameManager.nextInitHeight);
 
-        initCubeNum = Random.Range(0, obstacleList.Count);
+            initCubeNum = Random.Range(0, obstacleList.Count);
 
-        Instantiate(obstacleList[initCubeNum], new Vector3(xRange, GameManager.nextInitHeight + 0.1f, zRange),
-            Quaternion.Euler(Quaternion.identity.x, Random.Range(0, 360), Quaternion.identity.z));
-        GameManager.high += 1;
-        GameManager.Ghigh += 1;
+            Instantiate(obstacleList[initCubeNum], new Vector3(xRange, GameManager.nextInitHeight + 0.1f, zRange),
+                Quaternion.Euler(Quaternion.identity.x, Random.Range(0, 360), Quaternion.identity.z));
+            GameManager.high += 1;
+            GameManager.Ghigh += 1;
+        }
+
     }
-
 
 }
