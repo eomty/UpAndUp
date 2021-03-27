@@ -11,6 +11,7 @@ public class PlayerDie : MonoBehaviour
     public GameObject MainC;
     //public GameObject ResultCharacter;
     public bool isCanDie;
+    CameraMovement cameraMove;
     private void Start()
     {
         //PopopC = GameObject.FindWithTag("PopopC");
@@ -20,7 +21,7 @@ public class PlayerDie : MonoBehaviour
         //ResultCharacter = GameObject.FindWithTag("ResultPlayer").transform.Find("ResultPlayer2").gameObject;
         PopopC = GameObject.FindWithTag("PopupC").transform.Find("Popup").gameObject;
         //playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
-
+        cameraMove = GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>();
     }
 
 
@@ -55,6 +56,6 @@ public class PlayerDie : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         PopopC.SetActive(true);
         //ResultCharacter.SetActive(true);
-
+        cameraMove.GameEndCameraPosition();
     }
 }

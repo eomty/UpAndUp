@@ -32,7 +32,13 @@ public class CameraMovement : MonoBehaviour
             //목표에 도달하는 시간값을 -값으로 주어 공이 떨어질때 같이 움직이지 않음
         }
 
-        if(GameManager.isPlayerDie)
+       
+    }
+
+
+    public void GameEndCameraPosition()
+    {
+        if (GameManager.isPlayerDie)
         {
             transform.position = new Vector3(100, 100, 100);
         }
