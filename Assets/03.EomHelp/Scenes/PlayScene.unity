@@ -4463,17 +4463,17 @@ PrefabInstance:
     - target: {fileID: 3493065942110573453, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
       propertyPath: m_Center.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3493065942110573453, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
       propertyPath: m_Size.y
-      value: 0.47
+      value: 1.86
       objectReference: {fileID: 0}
     - target: {fileID: 3493065942110573453, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
       propertyPath: m_Center.y
-      value: -0.28
+      value: 0.41
       objectReference: {fileID: 0}
     - target: {fileID: 3493065942110573453, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
@@ -4483,7 +4483,7 @@ PrefabInstance:
     - target: {fileID: 3493065942110573453, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
       propertyPath: m_Center.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 3493065942110573454, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
@@ -4498,7 +4498,12 @@ PrefabInstance:
     - target: {fileID: 3493065942110573454, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
       propertyPath: distToGround
-      value: 0.1
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493065942110573454, guid: dba38e150233d104b96d456dd5e01d94,
+        type: 3}
+      propertyPath: rayLayerMask.m_Bits
+      value: 32768
       objectReference: {fileID: 0}
     - target: {fileID: 3493065942110573455, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
@@ -4519,6 +4524,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3493065942110573488, guid: dba38e150233d104b96d456dd5e01d94,
+        type: 3}
+      propertyPath: m_Layer
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3493065942110573489, guid: dba38e150233d104b96d456dd5e01d94,
         type: 3}
@@ -5374,7 +5384,7 @@ GameObject:
   - component: {fileID: 1818623906}
   - component: {fileID: 1818623905}
   - component: {fileID: 1818623909}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6673,6 +6683,11 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 963194227}
+    - target: {fileID: 5760989654600477842, guid: 2377f622b5cd4f94697843dd23de4d6f,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5760989654600477852, guid: 2377f622b5cd4f94697843dd23de4d6f,
         type: 3}
       propertyPath: m_Name

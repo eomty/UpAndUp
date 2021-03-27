@@ -7,18 +7,15 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
 {
     public GameObject player;
     public float jumpPower = 0;
-    public float distToGround = 0.6f;
-    bool grounded = false;
+    public float distToGround = 2f;
     bool jumpT = false;
     bool isjump = false;
     Rigidbody rig;
     float touchnMoveDistance = 0;
 	public PlayerAnimation MyAnimator;
+    public LayerMask rayLayerMask;
 
-    //public void IPointerDownHandler()
-    //{
-        
-    //}
+  
     private void Start()
     {
         rig = player.GetComponent<Rigidbody>();
@@ -54,16 +51,16 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
             touchnMoveDistance = 0;
         }
 
-        if (isjump ==true  && jumpT)
+        if (isjump && jumpT && isGround())
         {
-			
+		    
             rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
 			MyAnimator.JumpAnimaion();
             //GameManager.reAnimationNum = Random.Range(0, 7);
             //Debug.Log("reAni: " + GameManager.reAnimationNum);
             isjump = false;
             jumpT = false;
-
+            
         }
 
   
@@ -75,11 +72,9 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         {
             jumpT = true;
         }
-
-
-
-      
     }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         isjump = true;
@@ -89,6 +84,10 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
     {
         MyAnimator.SitAnimation();
     }
-
+    
+    public bool isGround()
+    {  
+        return Physics.Raycast(transform.position, Vector3.down, distToGround, rayLayerMask);
+    }
 
 }

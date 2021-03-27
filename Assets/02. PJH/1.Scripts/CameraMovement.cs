@@ -25,13 +25,16 @@ public class CameraMovement : MonoBehaviour
     {
         Vector3 TargetPosition = Player.position + Offset;
                                                  
-        if(Player.position.y > transform.position.y - PositionOffset)
+        if(Player.position.y > transform.position.y - PositionOffset&& GameManager.isPlayerDie== false)
         {//공의 포지션이 카메라보다 낮다는 것은 공이 떨어질 때를 의미
             transform.position = TargetPosition = Vector3.SmoothDamp(transform.position, TargetPosition, ref Velocity, smoothDamp);
             //현재위치, 이동할 위치, 현재속도, 목표에 도달할기까지 걸릴 시간
             //목표에 도달하는 시간값을 -값으로 주어 공이 떨어질때 같이 움직이지 않음
         }
 
-
+        if(GameManager.isPlayerDie)
+        {
+            transform.position = new Vector3(100, 100, 100);
+        }
     }
 }

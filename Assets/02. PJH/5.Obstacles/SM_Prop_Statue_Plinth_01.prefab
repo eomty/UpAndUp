@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1477365104647591814}
   - component: {fileID: 3602869353760689175}
   - component: {fileID: 3612135998888848552}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: SM_Prop_Statue_Plinth_01
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -111,8 +111,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PopopC: {fileID: 5760989654600477852, guid: 2377f622b5cd4f94697843dd23de4d6f, type: 3}
   MainC: {fileID: 5233054538984988677, guid: 8b5bbaf59b1f0d74db1df866fbe5d75b, type: 3}
-  ResultCharacter: {fileID: 7009489165239259619, guid: dde878bd4d3632745adc9f40ac8e024c,
-    type: 3}
   isCanDie: 0
 --- !u!114 &1477365104647591814
 MonoBehaviour:
@@ -173,3 +171,4 @@ MonoBehaviour:
   - {fileID: 8651717727735473407, guid: 7da4e2202e2a27243aa3915ed9b512f9, type: 3}
   - {fileID: 5712949031569462758, guid: 8704d3ef4051cf4498b5951d7574f6d0, type: 3}
   - {fileID: 4100020560668120565, guid: aa7c5515026a0474585a761597330517, type: 3}
+  isInit: 0

@@ -38,13 +38,14 @@ public class CubeMove : MonoBehaviour
             {
                 die.CallDie();
                 isEnd = true;
+              
             }
         }
     }
 
     public void CMove()
     {
-        if (playerOn == false)
+        if (playerOn == false && GameManager.isPlayerDie == false)
         {
             transform.position = Vector3.MoveTowards(transform.position, MPosition, speed * Time.deltaTime);
         }
