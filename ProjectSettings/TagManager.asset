@@ -12,6 +12,8 @@ TagManager:
   - PopupC
   - reset
   - MainCC
+  - ScoreText
+  - Extext
   layers:
   - Default
   - TransparentFX

@@ -10,7 +10,7 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
     public float distToGround = 2f;
     bool jumpT = false;
     bool isjump = false;
-    Rigidbody rig;
+   public Rigidbody rig;
     float touchnMoveDistance = 0;
 	public PlayerAnimation MyAnimator;
     public LayerMask rayLayerMask;

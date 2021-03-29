@@ -9,6 +9,7 @@ public class ResetText : MonoBehaviour
     public GameObject textList2;
     public GameObject textList3;
     public GameObject textList4;
+    //AutoDestroyed autoDestroyed;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class ResetText : MonoBehaviour
         //textList2 = GameObject.FindGameObjectWithTag("reset");
         //textList3 = GameObject.FindGameObjectWithTag("reset");
         //textList4 = GameObject.FindGameObjectWithTag("reset");
+        //autoDestroyed.GetComponent<AutoDestroyed>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class ResetText : MonoBehaviour
 
     public void TextCreate()
     {
+        //autoDestroyed.Active1f();
         switch (GameManager.TextNum)
         {
             case 1:

@@ -14,6 +14,9 @@ public class ObstacleScript : MonoBehaviour
     PlayerDie die;
     PlayerAnimation playAnimation;
     ResetText resettext;
+    //ResetTextNum resetTextNum;
+    ResetTextNum resettextnum;
+    PlayerJump playerjump;
 
 
     private void Awake()
@@ -22,8 +25,10 @@ public class ObstacleScript : MonoBehaviour
         CM = GetComponent<CubeMove>();
         die = GetComponent<PlayerDie>();
         resettext = GameObject.Find("PxExGoBad").GetComponent<ResetText>();
+        //resettextnum = GameObject.FindWithTag("MainC").transform.Find("ScoreText").gameObject;
+        resettextnum = GameObject.FindWithTag("ScoreText").GetComponentInChildren<ResetTextNum>();
         playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
-  
+        playerjump = GameObject.Find("Player").GetComponent<PlayerJump>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -35,7 +40,8 @@ public class ObstacleScript : MonoBehaviour
             if(isDone ==false)
             {
                 float distanceCheck;
-                playerPosition = new Vector3(collision.gameObject.transform.position.x, 0, collision.gameObject.transform.position.z);
+                playerPosition = new Vector3(collision.gameObject.transform.position.x, 0,
+                    collision.gameObject.transform.position.z);
                 EnemyPosition = new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z);
 
                 distanceCheck = Vector3.Distance(playerPosition, EnemyPosition);
@@ -52,7 +58,7 @@ public class ObstacleScript : MonoBehaviour
                     playAnimation.ExcellentAnimation();
                     GameManager.TextNum = 2;
                     resettext.TextCreate();
-
+                    resettextnum.TextScoreCreate();
                     //장애물의 움직임을 끄는 코드
 
                     GameManager.scoreNum = 300;
@@ -66,6 +72,7 @@ public class ObstacleScript : MonoBehaviour
                     playAnimation.PerfactAnimation();
                     GameManager.TextNum = 1;
                     resettext.TextCreate();
+                    resettextnum.TextScoreCreate();
 
                     //장애물의 움직임을 끄는 코드
 
@@ -80,6 +87,7 @@ public class ObstacleScript : MonoBehaviour
                     playAnimation.GoodAnimation();
                     GameManager.TextNum = 3;
                     resettext.TextCreate();
+                    resettextnum.TextScoreCreate();
 
                     //장애물의 움직임을 끄는 코드
                     GameManager.scoreNum = 100;
@@ -87,6 +95,8 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else
                 {
+                    playerjump.rig.AddForce(-EnemyPosition * 850f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
+                    playerjump.transform.Rotate(-EnemyPosition);
                     GameManager.TextNum = 4; //Not Canvas so Not Bad
                     resettext.TextCreate();
                     cubeInit.ObstacleCreate();

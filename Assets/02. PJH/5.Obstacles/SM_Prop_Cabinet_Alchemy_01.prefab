@@ -416,6 +416,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 751180531623151177, guid: 8fe4cc879570096499176d307bea2536, type: 3}
+  resettextnum: {fileID: 6310198479530160192, guid: 0f04c6b68f0f627458eb0d73656aa122,
+    type: 3}
 --- !u!1 &2721204164153754076
 GameObject:
   m_ObjectHideFlags: 0
