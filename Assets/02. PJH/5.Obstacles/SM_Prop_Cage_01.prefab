@@ -112,6 +112,7 @@ MonoBehaviour:
   PopopC: {fileID: 5760989654600477852, guid: 2377f622b5cd4f94697843dd23de4d6f, type: 3}
   MainC: {fileID: 5233054538984988677, guid: 8b5bbaf59b1f0d74db1df866fbe5d75b, type: 3}
   isCanDie: 0
+  player: {fileID: 0}
 --- !u!114 &513709590096334122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,8 +126,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 751180531623151177, guid: 8fe4cc879570096499176d307bea2536, type: 3}
-  resettextnum: {fileID: 6310198479530160192, guid: 0f04c6b68f0f627458eb0d73656aa122,
-    type: 3}
 --- !u!114 &3054522727913979570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,14 +155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obstacleList:
   - {fileID: 5885170180578559597, guid: 157b7d24da007474390850782777a51c, type: 3}
-  - {fileID: 5885170180578559597, guid: 157b7d24da007474390850782777a51c, type: 3}
   - {fileID: 2977225501599036696, guid: be8c5118276d82542a7cee67014140d8, type: 3}
   - {fileID: 9173672756182013833, guid: 11207a3f097ae3042a34ed59013d22c7, type: 3}
-  - {fileID: 6760743332174944622, guid: 5f6659cb72c7e8d479faaf738ecaa77a, type: 3}
   - {fileID: 2721150403222791948, guid: e0e63defc23cfe84db34d717aa9a08e3, type: 3}
-  - {fileID: 8121871769105963142, guid: 89c9af46ffe2b324087b4a282ab965eb, type: 3}
   - {fileID: 9169391907542412120}
-  - {fileID: 8858532930851831859, guid: ae2affc2e2c67fb44b84a1bd20598a20, type: 3}
   - {fileID: 5414777841082105252, guid: c21a0a87ca002b34591b7d45d59264d0, type: 3}
   - {fileID: 5685546554919150648, guid: 48084204a79a7c04295be6fe6d7b6cc2, type: 3}
   - {fileID: 3561716603368004554, guid: 58e948b715dbab34abd37a8d43b73725, type: 3}

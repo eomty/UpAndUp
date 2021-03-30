@@ -21,8 +21,8 @@ public class CubeInit : MonoBehaviour
         {
             float cubeHeight = gameObject.GetComponent<MeshRenderer>().bounds.size.y;
 
-            float xRange = Random.Range(-8, 8); //생성 범위
-            float zRange = Random.Range(7, 12);
+            float xRange = -Random.Range(2.4f, 7.79f); //생성 범위
+            float zRange = Random.Range(2.2f, 7.06f);
 
 
             GameManager.nextInitHeight += cubeHeight;
