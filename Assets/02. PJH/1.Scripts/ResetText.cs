@@ -33,15 +33,15 @@ public class ResetText : MonoBehaviour
         switch (GameManager.TextNum)
         {
             case 1:
-                Instantiate(textList1, new Vector3(0, 0, 0), Quaternion.identity,
+                Instantiate(textList1, new Vector3(0, 800f, 0), Quaternion.identity,
                     GameObject.Find("MainCC").transform);
                 break;
             case 2:
-                Instantiate(textList2, new Vector3(0, 0, 0), Quaternion.identity,
+                Instantiate(textList2, new Vector3(0, 800f, 0), Quaternion.identity,
                     GameObject.Find("MainCC").transform);
                 break;
             case 3:
-                Instantiate(textList3, new Vector3(0, 0, 0), Quaternion.identity,
+                Instantiate(textList3, new Vector3(0, 800f, 0), Quaternion.identity,
                     GameObject.Find("MainCC").transform);
                 break;
             case 4:

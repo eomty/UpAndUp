@@ -46,6 +46,7 @@ public class PlayerAnimation : MonoBehaviour
 		playerAnimator.SetTrigger("Sit");
 	}
 
+
 	//public void JumpAnimaion()
 	//{
 	//	playerAnimator.SetTrigger("Jump");

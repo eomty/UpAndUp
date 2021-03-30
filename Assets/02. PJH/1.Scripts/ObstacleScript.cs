@@ -61,8 +61,8 @@ public class ObstacleScript : MonoBehaviour
                     resettextnum.TextScoreCreate();
 
                     //장애물의 움직임을 끄는 코드
-                    GameManager.scoreNum = 500;
-                    GameManager.score += 500 * GameManager.high;
+                    GameManager.scoreNum = 5;
+                    GameManager.score += 5 * GameManager.high;
                     
                 }
                 else if (distanceCheck <= thisRadius * 0.5)
@@ -76,8 +76,8 @@ public class ObstacleScript : MonoBehaviour
                     resettext.TextCreate();
                     resettextnum.TextScoreCreate();
                     //장애물의 움직임을 끄는 코드
-                    GameManager.scoreNum = 300;
-                    GameManager.score += 300 * GameManager.high;
+                    GameManager.scoreNum = 3;
+                    GameManager.score += 3 * GameManager.high;
 
                 }
                 else if (distanceCheck <= thisRadius * 0.8)
@@ -91,9 +91,10 @@ public class ObstacleScript : MonoBehaviour
                     resettextnum.TextScoreCreate();
 
                     //장애물의 움직임을 끄는 코드
-                    GameManager.scoreNum = 100;
-                    GameManager.score += 100 * GameManager.high;
+                    GameManager.scoreNum = 1;
+                    GameManager.score += 1 * GameManager.high;
                 }
+			
                 else
                 {
                     playerjump.rig.AddRelativeForce(new Vector3(1,1,1) * 1000f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
@@ -103,12 +104,26 @@ public class ObstacleScript : MonoBehaviour
                     cubeInit.ObstacleCreate();
                     die.CallDie();
                     CM.playerOn = true;
-                    Debug.Log("Bad");
+                    Debug.Log("Bad2");
                     playAnimation.DieAnimation();
                     GameManager.GameDataSave(GameManager.isPlayerDie);
                 }
 
-                isDone = true;
+				//else if (distanceCheck <= thisRadius * 0.95)
+				//{
+				//	//playerjump.rig.AddRelativeForce(new Vector3(1, 1, 1) * 1000f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
+				//																									   //playerjump.transform.Rotate(-EnemyPosition);
+				//	GameManager.TextNum = 4; //Not Canvas so Not Bad
+				//	resettext.TextCreate();
+				//	cubeInit.ObstacleCreate();
+				//	die.CallDie();
+				//	CM.playerOn = true;
+				//	Debug.Log("Bad1");
+				//	playAnimation.DieAnimation();
+				//	GameManager.GameDataSave(GameManager.isPlayerDie);
+				//}
+
+				isDone = true;
             }
 
 

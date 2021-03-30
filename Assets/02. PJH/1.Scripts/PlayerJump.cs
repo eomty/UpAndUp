@@ -28,8 +28,8 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         {
             Vector3 moveDistance = Input.GetTouch(0).deltaPosition;
             touchnMoveDistance += moveDistance.y;
-
-        }
+			MyAnimator.SitAnimation();
+		}
 
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
         {
@@ -45,7 +45,7 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
             jumpPower = touchnMoveDistance;
             Jump();
             //GameManager.reAnimationNum = Random.Range(0, 7);
-           // Debug.Log("reAni: " + GameManager.reAnimationNum);
+            //Debug.Log("앉는 애니메이션을 넣어주세요");
             GameManager.TextNum = 0;
 
             touchnMoveDistance = 0;
