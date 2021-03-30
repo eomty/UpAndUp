@@ -35,11 +35,11 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         {
             if(touchnMoveDistance<= 500)
             {
-                touchnMoveDistance = 500;
+                touchnMoveDistance = 600;
             }
-            else if(touchnMoveDistance >= 700)
+            else if(touchnMoveDistance >= 850)
             {
-                touchnMoveDistance = 700;
+                touchnMoveDistance = 850;
             }
 
             jumpPower = touchnMoveDistance;

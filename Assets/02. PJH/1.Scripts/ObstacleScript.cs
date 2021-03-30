@@ -96,7 +96,7 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else
                 {
-                    playerjump.rig.AddRelativeForce(new Vector3(1,1,1) * 1000f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
+                    //playerjump.rig.AddRelativeForce(new Vector3(1,1,1) * 1000f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
                     //playerjump.transform.Rotate(-EnemyPosition);
                     GameManager.TextNum = 4; //Not Canvas so Not Bad
                     resettext.TextCreate();

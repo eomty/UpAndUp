@@ -18,10 +18,8 @@ public class GameManager : MonoBehaviour
     static public bool isPlayerDie = false;
     GoogleAdsManager googleAdsManager;
 
-    private void Start()
-    {
-        googleAdsManager.ShowBanner();
-    }
+
+    int initCubeNum;
 
     public static void GameDataSave(bool isDie)
     {
