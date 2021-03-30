@@ -12,6 +12,7 @@ public class PlayerDie : MonoBehaviour
     //public GameObject ResultCharacter;
     public bool isCanDie;
     CameraMovement cameraMove;
+    public GameObject player;
     private void Start()
     {
         //PopopC = GameObject.FindWithTag("PopopC");
@@ -30,7 +31,7 @@ public class PlayerDie : MonoBehaviour
         if (GameManager.isPlayerDie == false)
         {
             GameManager.isPlayerDie = true;
-           
+
             Debug.Log("Die");
             //cubemove.playerOn2 = true;
             //cubemove.DontMove();

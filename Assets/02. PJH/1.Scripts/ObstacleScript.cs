@@ -50,21 +50,7 @@ public class ObstacleScript : MonoBehaviour
                 thisRadius = Mathf.Pow(GetComponent<BoxCollider>().size.x * GetComponent<BoxCollider>().size.z, 0.5f) /2;//오브젝트의 반지름을 구하는 코드
                 
                 //Debug.Log(thisRadius);                   //임시로 제거
-                if (distanceCheck <= thisRadius * 0.6)
-                {
-                    cubeInit.ObstacleCreate();
-                    Debug.Log("Ex");
-                    CM.playerOn = true;
-                    playAnimation.ExcellentAnimation();
-                    GameManager.TextNum = 2;
-                    resettext.TextCreate();
-                    resettextnum.TextScoreCreate();
-                    //장애물의 움직임을 끄는 코드
-
-                    GameManager.scoreNum = 300;
-                    GameManager.score += 300 * GameManager.high;
-                }
-                else if (distanceCheck <= thisRadius * 0.25)
+                if (distanceCheck <= thisRadius * 0.25)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("perfect");
@@ -75,11 +61,26 @@ public class ObstacleScript : MonoBehaviour
                     resettextnum.TextScoreCreate();
 
                     //장애물의 움직임을 끄는 코드
-
                     GameManager.scoreNum = 500;
                     GameManager.score += 500 * GameManager.high;
+                    
                 }
-                else if (distanceCheck <= thisRadius * 0.9)
+                else if (distanceCheck <= thisRadius * 0.5)
+                {
+                  
+                    cubeInit.ObstacleCreate();
+                    Debug.Log("Ex");
+                    CM.playerOn = true;
+                    playAnimation.ExcellentAnimation();
+                    GameManager.TextNum = 2;
+                    resettext.TextCreate();
+                    resettextnum.TextScoreCreate();
+                    //장애물의 움직임을 끄는 코드
+                    GameManager.scoreNum = 300;
+                    GameManager.score += 300 * GameManager.high;
+
+                }
+                else if (distanceCheck <= thisRadius * 0.8)
                 {
                     cubeInit.ObstacleCreate();
                     Debug.Log("good");
@@ -95,8 +96,8 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else
                 {
-                    playerjump.rig.AddForce(-EnemyPosition * 850f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
-                    playerjump.transform.Rotate(-EnemyPosition);
+                    playerjump.rig.AddRelativeForce(new Vector3(1,1,1) * 1000f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
+                    //playerjump.transform.Rotate(-EnemyPosition);
                     GameManager.TextNum = 4; //Not Canvas so Not Bad
                     resettext.TextCreate();
                     cubeInit.ObstacleCreate();

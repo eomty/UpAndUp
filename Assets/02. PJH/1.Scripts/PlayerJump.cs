@@ -71,6 +71,7 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         if(isjump)
         {
             jumpT = true;
+            //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotation;
         }
     }
 
