@@ -9,7 +9,7 @@ public class GoogleAdsManager : MonoBehaviour
     public void Start()
     {
 #if UNITY_ANDROID
-        string appId = "ca-app-pub-6039351852904503~8403382204";
+        string appId = "ca-app-pub-3940256099942544~3347511713";
 #elif UNITY_IPHONE
             string appId = "ca-app-pub-3940256099942544~1458002511";
 #else
@@ -19,12 +19,13 @@ public class GoogleAdsManager : MonoBehaviour
         MobileAds.Initialize(appId);
 
         this.RequestBanner();
+        Debug.Log("광고 실행 ");
     }
 
     private void RequestBanner()
     {
 #if UNITY_ANDROID
-        string AdUnitID = "ca-app-pub-6039351852904503/3697850431"; //테스트 아이디
+        string AdUnitID = "ca-app-pub-3940256099942544/6300978111"; //테스트 아이디
 #else
         string AdUnitID = "unDefind";
 #endif
