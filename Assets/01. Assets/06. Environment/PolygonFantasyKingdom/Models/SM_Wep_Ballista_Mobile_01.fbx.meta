@@ -1,15 +1,45 @@
 fileFormatVersion: 2
-guid: 357d53aa062ebb04e8e5aaa195e1a5a4
-timeCreated: 1576621953
+guid: 3e74f5682b119c448b20bfb54a522578
+timeCreated: 1581552944
 licenseType: Store
 ModelImporter:
   serializedVersion: 21
   fileIDToRecycleName:
     100000: //RootNode
+    100002: SM_Wep_Ballista_Mobile_Bolt_01
+    100004: SM_Wep_Ballista_Mobile_Handle_01
+    100006: SM_Wep_Ballista_Mobile_Loader_01
+    100008: SM_Wep_Ballista_Mobile_String_01
+    100010: SM_Wep_Ballista_Mobile_Wheel_L_01
+    100012: SM_Wep_Ballista_Mobile_Wheel_R_01
     400000: //RootNode
+    400002: SM_Wep_Ballista_Mobile_Bolt_01
+    400004: SM_Wep_Ballista_Mobile_Handle_01
+    400006: SM_Wep_Ballista_Mobile_Loader_01
+    400008: SM_Wep_Ballista_Mobile_String_01
+    400010: SM_Wep_Ballista_Mobile_Wheel_L_01
+    400012: SM_Wep_Ballista_Mobile_Wheel_R_01
     2300000: //RootNode
+    2300002: SM_Wep_Ballista_Mobile_Bolt_01
+    2300004: SM_Wep_Ballista_Mobile_Handle_01
+    2300006: SM_Wep_Ballista_Mobile_Loader_01
+    2300008: SM_Wep_Ballista_Mobile_String_01
+    2300010: SM_Wep_Ballista_Mobile_Wheel_L_01
+    2300012: SM_Wep_Ballista_Mobile_Wheel_R_01
     3300000: //RootNode
-    4300000: FX_Sphere_03
+    3300002: SM_Wep_Ballista_Mobile_Bolt_01
+    3300004: SM_Wep_Ballista_Mobile_Handle_01
+    3300006: SM_Wep_Ballista_Mobile_Loader_01
+    3300008: SM_Wep_Ballista_Mobile_String_01
+    3300010: SM_Wep_Ballista_Mobile_Wheel_L_01
+    3300012: SM_Wep_Ballista_Mobile_Wheel_R_01
+    4300000: SM_Wep_Ballista_Mobile_01
+    4300002: SM_Wep_Ballista_Mobile_Wheel_L_01
+    4300004: SM_Wep_Ballista_Mobile_Wheel_R_01
+    4300006: SM_Wep_Ballista_Mobile_String_01
+    4300008: SM_Wep_Ballista_Mobile_Loader_01
+    4300010: SM_Wep_Ballista_Mobile_Bolt_01
+    4300012: SM_Wep_Ballista_Mobile_Handle_01
     9500000: //RootNode
   materials:
     importMaterials: 0
@@ -35,14 +65,14 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
-    importBlendShapes: 1
+    importBlendShapes: 0
     importCameras: 1
     importLights: 1
     swapUVChannels: 0
@@ -57,11 +87,11 @@ ModelImporter:
     secondaryUVPackMargin: 4
     useFileScale: 1
   tangentSpace:
-    normalSmoothAngle: 60
-    normalImportMode: 0
+    normalSmoothAngle: 5
+    normalImportMode: 1
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
@@ -80,7 +110,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
