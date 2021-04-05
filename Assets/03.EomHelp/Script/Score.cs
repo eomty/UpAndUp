@@ -6,14 +6,14 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public TextMeshProUGUI highScore;
+    public Text highScore;
     //TextMeshPro highScore;
     private int resource;
     //public Text highStair;
     // Start is called before the first frame update
     void Awake()
     {
-        highScore=GetComponent<TextMeshProUGUI>();
+       // highScore=GetComponent<TextMeshProUGUI>();
         GameManager.highScore = PlayerPrefs.GetInt("HighScore");
         //GameManager.highStair = PlayerPrefs.GetInt("HighStair");
         PlayerPrefs.Save();
@@ -27,7 +27,7 @@ public class Score : MonoBehaviour
     void Update()
     {
         //highStair.text = "BestStair:" + GameManager.highStair;
-        //highScore.text = "BestScore:" + GameManager.highScore;
+        highScore.text = "BestScore:" + GameManager.highScore;
     }
 
 }
