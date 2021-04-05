@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UpTempler : MonoBehaviour
 {
@@ -20,5 +21,13 @@ public class UpTempler : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         speed = 0f;
+        StartCoroutine("MainScene");
     }
+
+    IEnumerator MainScene()
+    {
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene("MainScene");
+    }
+
 }

@@ -18,7 +18,7 @@ public class ResetTextNum : MonoBehaviour
     //}
     public void TextScoreCreate()
     {
-        Invoke("SC", 0.5f);
+        Invoke("SC", 1f);
         //autoDestroyed.Active1f();
         
     }

@@ -8,48 +8,37 @@ public class ResetText : MonoBehaviour
     public GameObject textList1;
     public GameObject textList2;
     public GameObject textList3;
-    public GameObject textList4;
     //AutoDestroyed autoDestroyed;
     // Start is called before the first frame update
-    void Start()
-    {
-        //Destroy(gameObject, 2f);
-        //textList1 = GameObject.FindGameObjectWithTag("reset");
-        //textList2 = GameObject.FindGameObjectWithTag("reset");
-        //textList3 = GameObject.FindGameObjectWithTag("reset");
-        //textList4 = GameObject.FindGameObjectWithTag("reset");
-        //autoDestroyed.GetComponent<AutoDestroyed>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public void TextCreate()
     {
+        Invoke("SC", 0.5f);
         //autoDestroyed.Active1f();
+    }
+    public void SC()
+    {
         switch (GameManager.TextNum)
         {
             case 1:
-                Instantiate(textList1, new Vector3(0, 800f, 0), Quaternion.identity,
-                    GameObject.Find("MainCC").transform);
+                textList1.SetActive(true);
                 break;
             case 2:
-                Instantiate(textList2, new Vector3(0, 800f, 0), Quaternion.identity,
-                    GameObject.Find("MainCC").transform);
+                textList2.SetActive(true);
                 break;
             case 3:
-                Instantiate(textList3, new Vector3(0, 800f, 0), Quaternion.identity,
-                    GameObject.Find("MainCC").transform);
-                break;
-            case 4:
-                //Instantiate(textList4, new Vector3(0, 0, 0), Quaternion.identity,
-                    //GameObject.Find("Canvas").transform);
+                textList3.SetActive(true);
                 break;
         }
+        StartCoroutine("WaitResult");
+    }
 
+    IEnumerator WaitResult()
+    {
+
+        yield return new WaitForSeconds(2f);
+        textList1.SetActive(false);
+        textList2.SetActive(false);
+        textList3.SetActive(false);
     }
 
 }

@@ -1,14 +1,14 @@
 {
   "dependencies": {
-    "com.google.external-dependency-manager": {
-      "version": "1.2.164",
+    "com.unity.collab-proxy": {
+      "version": "1.2.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
-      "url": "https://unityregistry-pa.googleapis.com"
+      "url": "https://packages.unity.com"
     },
-    "com.unity.collab-proxy": {
-      "version": "1.2.16",
+    "com.unity.device-simulator": {
+      "version": "2.2.4-preview",
       "depth": 0,
       "source": "registry",
       "dependencies": {},

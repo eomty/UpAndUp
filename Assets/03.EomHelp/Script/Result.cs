@@ -20,9 +20,9 @@ public class Result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Cs_score.text = "Score:" + GameManager.score;
-        Cs_stair.text = "CurrentStair:" + GameManager.high;
-        Best_score.text = "BestScore:" + GameManager.highScore;
-        Best_stair.text = "BestStair:" + GameManager.highStair;
+          Cs_score.text = "<color=#FF9BA9> Score </color>" + "\n"  + GameManager.score;
+       // Cs_stair.text = "CurrentStair:" + GameManager.high;
+        Best_score.text = "<color=#8ABAEE> BestScore </color>" + "\n"+ GameManager.highScore;
+        //Best_stair.text = "BestStair:"+"\n"+  GameManager.highStair;
     }
 }
