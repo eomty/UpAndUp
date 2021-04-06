@@ -21,35 +21,50 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         rig = player.GetComponent<Rigidbody>();
 		MyAnimator = GetComponentInChildren<PlayerAnimation>();
     }
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+                    if(isjump && isGround())
+                    {
+                        MyAnimator.SitAnimation();
+                    }
+                    
+                    break;
+                case TouchPhase.Moved:
+                    Vector3 moveDistance = Input.GetTouch(0).deltaPosition;
+                    touchnMoveDistance += moveDistance.y;
+                    break;
+                case TouchPhase.Ended:
+                    Debug.Log("떘다!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                    if (touchnMoveDistance <= 500)
+                    {
+                        touchnMoveDistance = 600;
+                    }
+                    else if (touchnMoveDistance >= 850)
+                    {
+                        touchnMoveDistance = 850;
+                    }
+
+                    jumpPower = touchnMoveDistance;
+                    Jump();
+                    GameManager.TextNum = 0;
+
+                    touchnMoveDistance = 0;
+                    break;
+            }
+
+        }
+    }
 
     private void FixedUpdate()
     {
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            Vector3 moveDistance = Input.GetTouch(0).deltaPosition;
-            touchnMoveDistance += moveDistance.y;
-			MyAnimator.SitAnimation();
-		}
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-            if(touchnMoveDistance<= 500)
-            {
-                touchnMoveDistance = 600;
-            }
-            else if(touchnMoveDistance >= 850)
-            {
-                touchnMoveDistance = 850;
-            }
-
-            jumpPower = touchnMoveDistance;
-            Jump();
-            //GameManager.reAnimationNum = Random.Range(0, 7);
-            //Debug.Log("앉는 애니메이션을 넣어주세요");
-            GameManager.TextNum = 0;
-
-            touchnMoveDistance = 0;
-        }
+   
+      
 
         if (isjump && jumpT && isGround())
         {

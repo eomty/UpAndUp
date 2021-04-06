@@ -16,7 +16,7 @@ public class ObstacleScript : MonoBehaviour
     ResetText resettext;
     //ResetTextNum resetTextNum;
     ResetTextNum resettextnum;
-    PlayerJump playerjump;
+
 
 
     private void Awake()
@@ -28,7 +28,7 @@ public class ObstacleScript : MonoBehaviour
         //resettextnum = GameObject.FindWithTag("MainC").transform.Find("ScoreText").gameObject;
         resettextnum = GameObject.FindWithTag("ScoreText").GetComponentInChildren<ResetTextNum>();
         playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
-        playerjump = GameObject.Find("Player").GetComponent<PlayerJump>();
+
     }
 
     private void OnCollisionEnter(Collision collision)
