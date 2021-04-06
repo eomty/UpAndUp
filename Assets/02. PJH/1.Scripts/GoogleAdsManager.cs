@@ -30,7 +30,7 @@ public class GoogleAdsManager : MonoBehaviour
         string AdUnitID = "unDefind";
 #endif
 
-        banner = new BannerView(AdUnitID, AdSize.Banner, AdPosition.Top);
+        banner = new BannerView(AdUnitID, AdSize.SmartBanner, AdPosition.Top);
 
         // Called when an ad request has successfully loaded.
         banner.OnAdLoaded += HandleOnAdLoaded_banner;
