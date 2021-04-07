@@ -12,7 +12,7 @@ public class ResetText : MonoBehaviour
     // Start is called before the first frame update
     public void TextCreate()
     {
-        Invoke("SC", 0.5f);
+        Invoke("SC", 0.1f);
         //autoDestroyed.Active1f();
     }
     public void SC()
@@ -28,17 +28,31 @@ public class ResetText : MonoBehaviour
             case 3:
                 textList3.SetActive(true);
                 break;
+            case 4:
+                Debug.Log("CASE4 DIE");
+                break;
+
         }
-        StartCoroutine("WaitResult");
+
+		//if (gameObject.activeSelf == true)
+		//{
+			
+		//	StartCoroutine("WaitResult");
+		//}
+		//else
+		//{
+		//	Debug.Log("false");
+		//}
+
     }
 
-    IEnumerator WaitResult()
-    {
+    //IEnumerator WaitResult()
+    //{
 
-        yield return new WaitForSeconds(2f);
-        textList1.SetActive(false);
-        textList2.SetActive(false);
-        textList3.SetActive(false);
-    }
+    //    yield return new WaitForSeconds(2f);
+    //    textList1.SetActive(false);
+    //    textList2.SetActive(false);
+    //    textList3.SetActive(false);
+    //}
 
 }

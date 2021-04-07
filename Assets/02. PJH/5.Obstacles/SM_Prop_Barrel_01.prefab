@@ -200,4 +200,4 @@ MonoBehaviour:
   PopopC: {fileID: 5760989654600477852, guid: 2377f622b5cd4f94697843dd23de4d6f, type: 3}
   MainC: {fileID: 5233054538984988677, guid: 8b5bbaf59b1f0d74db1df866fbe5d75b, type: 3}
   isCanDie: 0
-  player: {fileID: 0}
+  player: {fileID: 3493065942110573488, guid: dba38e150233d104b96d456dd5e01d94, type: 3}

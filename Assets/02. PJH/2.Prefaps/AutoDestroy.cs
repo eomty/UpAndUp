@@ -4,15 +4,55 @@ using UnityEngine;
 
 public class AutoDestroy : MonoBehaviour
 {
+
+    public GameObject textList1;
+    public GameObject textList2;
+    public GameObject textList3;
+    //AutoDestroyed autoDestroyed;
     // Start is called before the first frame update
-    void Start()
+    public void TextCreate2()
     {
-        Destroy(this.gameObject, 2f);
+        Invoke("SC", 0.85f);
+        //autoDestroyed.Active1f();
+    }
+    public void SC()
+    {
+        switch (GameManager.TextNum)
+        {
+            case 1:
+                textList1.SetActive(false);
+                break;
+            case 2:
+                textList2.SetActive(false);
+                break;
+            case 3:
+                textList3.SetActive(false);
+                break;
+            case 4:
+                Debug.Log("CASE4 X");
+                break;
+
+        }
+
+        //if (gameObject.activeSelf == true)
+        //{
+
+        //	StartCoroutine("WaitResult");
+        //}
+        //else
+        //{
+        //	Debug.Log("false");
+        //}
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    //IEnumerator WaitResult()
+    //{
+
+    //    yield return new WaitForSeconds(2f);
+    //    textList1.SetActive(false);
+    //    textList2.SetActive(false);
+    //    textList3.SetActive(false);
+    //}
+
 }

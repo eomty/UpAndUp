@@ -11,6 +11,9 @@ public class AudioManager : MonoBehaviour
     public float sfxVolumePercent { get; private set; }
     public float musicVolumePercent { get; private set; }
 
+	public AudioClip _jumpSound;
+	AudioSource myAudio; //sfx2D
+
 
 
     AudioSource sfx2DSource;
@@ -32,6 +35,7 @@ public class AudioManager : MonoBehaviour
             DontDestroyOnLoad(gameObject);
 
             library = GetComponent<SoundLibrary>();
+			myAudio = GetComponent<AudioSource>(); //마이 오디오에 컴퍼넌트에 있는 오디오 서스넣기 2fx
 
             musicSources = new AudioSource[2];
             for (int i = 0; i < 2; i++)
@@ -56,6 +60,11 @@ public class AudioManager : MonoBehaviour
                 
             }
         }
+
+	public void PlaySound2()
+	{
+		myAudio.PlayOneShot(_jumpSound);
+	}
     void Update()
     {
         if(playerT != null)
@@ -104,10 +113,10 @@ public class AudioManager : MonoBehaviour
             try
             {
                 AudioSource.PlayClipAtPoint(clip, pos, sfxVolumePercent * masterVolumePercent);
-                Debug.Log("진짜뭐하냐?");
+   
             }catch (NullReferenceException e)
             {
-                Debug.Log("뭐하냐?");
+   
             }
             }
     }

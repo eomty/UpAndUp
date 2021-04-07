@@ -16,7 +16,9 @@ public class ObstacleScript : MonoBehaviour
     ResetText resettext;
     //ResetTextNum resetTextNum;
     ResetTextNum resettextnum;
-
+    PlayerJump playerjump;
+    AutoActiveFalse autoActiveFalse;
+    AutoDestroy autoDestroy;
 
 
     private void Awake()
@@ -25,10 +27,12 @@ public class ObstacleScript : MonoBehaviour
         CM = GetComponent<CubeMove>();
         die = GetComponent<PlayerDie>();
         resettext = GameObject.Find("PxExGoBad").GetComponent<ResetText>();
+        autoActiveFalse = GameObject.Find("PxExGoBad").GetComponent<AutoActiveFalse>();
+        autoDestroy = GameObject.Find("ScoreTextNum").GetComponent<AutoDestroy>();
         //resettextnum = GameObject.FindWithTag("MainC").transform.Find("ScoreText").gameObject;
         resettextnum = GameObject.FindWithTag("ScoreText").GetComponentInChildren<ResetTextNum>();
         playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
-
+        playerjump = GameObject.Find("Player").GetComponent<PlayerJump>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -45,20 +49,20 @@ public class ObstacleScript : MonoBehaviour
                 EnemyPosition = new Vector3(gameObject.transform.position.x, 0, gameObject.transform.position.z);
 
                 distanceCheck = Vector3.Distance(playerPosition, EnemyPosition);
-                Debug.Log("0.9이상 사망"+distanceCheck);
+                //Debug.Log("0.9이상 사망"+distanceCheck);
 
                 thisRadius = Mathf.Pow(GetComponent<BoxCollider>().size.x * GetComponent<BoxCollider>().size.z, 0.5f) /2;//오브젝트의 반지름을 구하는 코드
                 
                 //Debug.Log(thisRadius);                   //임시로 제거
                 if (distanceCheck <= thisRadius * 0.25)
                 {
-                    cubeInit.ObstacleCreate();
-                    Debug.Log("perfect");
+					GameObject.Find("Perfect").GetComponent<AudioSource>().Play();
+					cubeInit.ObstacleCreate();
+                    Debug.Log("Perfect");
                     CM.playerOn = true;
                     playAnimation.PerfactAnimation();
                     GameManager.TextNum = 1;
-                    resettext.TextCreate();
-                    resettextnum.TextScoreCreate();
+                  
 
                     //장애물의 움직임을 끄는 코드
                     GameManager.scoreNum = 5;
@@ -67,14 +71,13 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else if (distanceCheck <= thisRadius * 0.5)
                 {
-                  
-                    cubeInit.ObstacleCreate();
-                    Debug.Log("Ex");
+					GameObject.Find("Excellent").GetComponent<AudioSource>().Play();
+					cubeInit.ObstacleCreate();
+                    Debug.Log("Excellent");
                     CM.playerOn = true;
                     playAnimation.ExcellentAnimation();
                     GameManager.TextNum = 2;
-                    resettext.TextCreate();
-                    resettextnum.TextScoreCreate();
+                 
                     //장애물의 움직임을 끄는 코드
                     GameManager.scoreNum = 3;
                     GameManager.score += 3 * GameManager.high;
@@ -82,47 +85,36 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else if (distanceCheck <= thisRadius * 0.8)
                 {
-                    cubeInit.ObstacleCreate();
-                    Debug.Log("good");
+					GameObject.Find("Good").GetComponent<AudioSource>().Play();
+					cubeInit.ObstacleCreate();
+                    Debug.Log("Good");
                     CM.playerOn = true;
                     playAnimation.GoodAnimation();
                     GameManager.TextNum = 3;
-                    resettext.TextCreate();
-                    resettextnum.TextScoreCreate();
+                  
 
                     //장애물의 움직임을 끄는 코드
                     GameManager.scoreNum = 1;
                     GameManager.score += 1 * GameManager.high;
                 }
-			
+
                 else
                 {
-                    //playerjump.rig.AddRelativeForce(new Vector3(1,1,1) * 1000f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
-                    //playerjump.transform.Rotate(-EnemyPosition);
                     GameManager.TextNum = 4; //Not Canvas so Not Bad
-                    resettext.TextCreate();
+                                             //resettext.TextCreate();
                     cubeInit.ObstacleCreate();
                     die.CallDie();
+                    GameObject.Find("Die").GetComponent<AudioSource>().Play();
                     CM.playerOn = true;
-                    Debug.Log("Bad2");
+                    Debug.Log("죽었습니다.");
                     playAnimation.DieAnimation();
                     GameManager.GameDataSave(GameManager.isPlayerDie);
                 }
-
-				//else if (distanceCheck <= thisRadius * 0.95)
-				//{
-				//	//playerjump.rig.AddRelativeForce(new Vector3(1, 1, 1) * 1000f * Time.deltaTime, ForceMode.Impulse); //AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
-				//																									   //playerjump.transform.Rotate(-EnemyPosition);
-				//	GameManager.TextNum = 4; //Not Canvas so Not Bad
-				//	resettext.TextCreate();
-				//	cubeInit.ObstacleCreate();
-				//	die.CallDie();
-				//	CM.playerOn = true;
-				//	Debug.Log("Bad1");
-				//	playAnimation.DieAnimation();
-				//	GameManager.GameDataSave(GameManager.isPlayerDie);
-				//}
-
+                resettext.TextCreate();
+				resettextnum.TextScoreCreate();
+                autoActiveFalse.TextCreate1();
+                autoDestroy.TextCreate2();
+		
 				isDone = true;
             }
 

@@ -5,12 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class UpTempler : MonoBehaviour
 {
-    public float speed = 1f;
+    public float speed = 0f;
     // Start is called before the first frame update
     void Start()
     {
+		Invoke("UpStart", 1f);
+	}
 
-    }
+	public void UpStart()
+	{
+		speed = 25f;
+	}
 
     // Update is called once per frame
     void Update()
@@ -27,7 +32,7 @@ public class UpTempler : MonoBehaviour
     IEnumerator MainScene()
     {
         yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("MainScene");
+        //SceneManager.LoadScene("MainScene");
     }
 
 }

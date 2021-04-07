@@ -32,7 +32,7 @@ public class PlayerDie : MonoBehaviour
         {
             GameManager.isPlayerDie = true;
 
-            Debug.Log("Die");
+            //Debug.Log("Die");
             //cubemove.playerOn2 = true;
             //cubemove.DontMove();
                MainC.SetActive(false);

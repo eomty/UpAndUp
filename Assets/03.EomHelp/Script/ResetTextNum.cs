@@ -18,7 +18,7 @@ public class ResetTextNum : MonoBehaviour
     //}
     public void TextScoreCreate()
     {
-        Invoke("SC", 1f);
+        Invoke("SC", 0.1f);
         //autoDestroyed.Active1f();
         
     }
@@ -35,18 +35,21 @@ public class ResetTextNum : MonoBehaviour
             case 3:
                 textList3.SetActive(true);
                 break;
+            case 4:
+                Debug.Log("CASE4 DIE");
+                break;
         }
-        Debug.Log("sasd");
-        StartCoroutine("WaitResult");
+        //Debug.Log("sasd");
+        //StartCoroutine("WaitResult");
     }
 
-    IEnumerator WaitResult()
-    {
+    //IEnumerator WaitResult()
+    //{
 
-        yield return new WaitForSeconds(1f);
-        textList1.SetActive(false);
-        textList2.SetActive(false);
-        textList3.SetActive(false);
-    }
+    //    yield return new WaitForSeconds(1f);
+    //    textList1.SetActive(false);
+    //    textList2.SetActive(false);
+    //    textList3.SetActive(false);
+    //}
 
 }

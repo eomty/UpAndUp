@@ -15,6 +15,9 @@ public class Music : MonoBehaviour
 	// Start is called before the first frame update
 	void Start()
 	{
+		audio.volume = 0.5f;   //배경음악
+		audio2.volume = 0.5f; //효과음
+
 		backVolume.onValueChanged.AddListener((value) =>
 		{ OnBackVolumeValueChanged(value); });
 		sfxVolume.onValueChanged.AddListener(delegate

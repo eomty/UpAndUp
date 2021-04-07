@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3681065414139469371}
   - component: {fileID: 3681065414139469368}
   - component: {fileID: 3681065414139469369}
-  - component: {fileID: -6675092470517755618}
+  - component: {fileID: 5440058268401598212}
   m_Layer: 5
   m_Name: Perfect
   m_TagString: reset
@@ -154,7 +154,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &-6675092470517755618
+--- !u!114 &5440058268401598212
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
