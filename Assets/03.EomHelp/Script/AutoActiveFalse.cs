@@ -12,7 +12,7 @@ public class AutoActiveFalse : MonoBehaviour
     // Start is called before the first frame update
    public void TextCreate1()
     {
-        Invoke("SC", 0.85f);
+        Invoke("SC", 0.8f);
         //autoDestroyed.Active1f();
     }
     public void SC()
