@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerDie : MonoBehaviour
 {
 
-
+    GameObject OpC;
     public GameObject PopopC;
 	//public GameObject MainCC;
     public GameObject MainC;
@@ -23,6 +23,7 @@ public class PlayerDie : MonoBehaviour
         PopopC = GameObject.FindWithTag("PopupC").transform.Find("Popup").gameObject;
         //playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
         cameraMove = GameObject.FindWithTag("MainCamera").GetComponent<CameraMovement>();
+        OpC = GameObject.Find("btnOptionC");
     }
 
 
@@ -36,6 +37,7 @@ public class PlayerDie : MonoBehaviour
             //cubemove.playerOn2 = true;
             //cubemove.DontMove();
                MainC.SetActive(false);
+            OpC.SetActive(false);
             //DC.Delete();
 
 

@@ -7,8 +7,10 @@ public class Change_Scene : MonoBehaviour
 {
 	public GameObject AudioManager;
 	AudioSource audio;
+	GameObject OpC;
 	private void Awake()
     {
+		OpC = GameObject.Find("btnOptionC");
 		AudioManager = GameObject.Find("AudioManager");
 		audio = AudioManager.GetComponent<AudioSource>();
 		if (audio.isPlaying) return; //배경음악이 재생되고 있다면 패스
@@ -27,6 +29,7 @@ public class Change_Scene : MonoBehaviour
 
 	public void RetryScene()
     {
+		OpC.SetActive(true);
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		GameManager.high = 0;
 		GameManager.score = 0;
@@ -38,6 +41,8 @@ public class Change_Scene : MonoBehaviour
 
 	public void ToStartScene(string sceneName)
 	{
+
+		OpC.SetActive(true);
 		SceneManager.LoadScene(sceneName);
 		GameManager.high = 0;
 		GameManager.score = 0;
