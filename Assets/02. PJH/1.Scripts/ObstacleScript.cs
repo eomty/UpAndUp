@@ -72,7 +72,7 @@ public class ObstacleScript : MonoBehaviour
                     GameManager.score += 5 * GameManager.high;
                     
                 }
-                else if (distanceCheck <= thisRadius * 0.5)
+                else if (distanceCheck <= thisRadius * 0.55)
                 {
                     //GameObject.Find("Excellent").GetComponent<AudioSource>().Play();
                     soundSet.ExcellentSoundChange();
@@ -87,7 +87,7 @@ public class ObstacleScript : MonoBehaviour
                     GameManager.score += 3 * GameManager.high;
 
                 }
-                else if (distanceCheck <= thisRadius * 0.8)
+                else if (distanceCheck <= thisRadius * 1)
                 {
                     //GameObject.Find("Good").GetComponent<AudioSource>().Play();
                     soundSet.GoodSoundChange();

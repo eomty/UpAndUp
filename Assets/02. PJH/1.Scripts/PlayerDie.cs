@@ -56,9 +56,9 @@ public class PlayerDie : MonoBehaviour
     IEnumerator WaitResult()
     {
 
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
         PopopC.SetActive(true);
         //ResultCharacter.SetActive(true);
-        cameraMove.GameEndCameraPosition();
+        //cameraMove.GameEndCameraPosition();
     }
 }
