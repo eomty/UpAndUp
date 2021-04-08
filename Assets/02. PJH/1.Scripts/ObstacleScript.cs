@@ -19,6 +19,7 @@ public class ObstacleScript : MonoBehaviour
     PlayerJump playerjump;
     AutoActiveFalse autoActiveFalse;
     AutoDestroy autoDestroy;
+    Music soundSet;
 
 
     private void Awake()
@@ -33,6 +34,7 @@ public class ObstacleScript : MonoBehaviour
         resettextnum = GameObject.FindWithTag("ScoreText").GetComponentInChildren<ResetTextNum>();
         playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
         playerjump = GameObject.Find("Player").GetComponent<PlayerJump>();
+        soundSet = GameObject.Find("AudioManager").GetComponent<Music>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -56,7 +58,8 @@ public class ObstacleScript : MonoBehaviour
                 //Debug.Log(thisRadius);                   //임시로 제거
                 if (distanceCheck <= thisRadius * 0.25)
                 {
-					GameObject.Find("Perfect").GetComponent<AudioSource>().Play();
+                    soundSet.PerfectSoundChange();
+					//GameObject.Find("Perfect").GetComponent<AudioSource>().Play();
 					cubeInit.ObstacleCreate();
                     Debug.Log("Perfect");
                     CM.playerOn = true;
@@ -71,7 +74,8 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else if (distanceCheck <= thisRadius * 0.5)
                 {
-					GameObject.Find("Excellent").GetComponent<AudioSource>().Play();
+                    //GameObject.Find("Excellent").GetComponent<AudioSource>().Play();
+                    soundSet.ExcellentSoundChange();
 					cubeInit.ObstacleCreate();
                     Debug.Log("Excellent");
                     CM.playerOn = true;
@@ -85,7 +89,8 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else if (distanceCheck <= thisRadius * 0.8)
                 {
-					GameObject.Find("Good").GetComponent<AudioSource>().Play();
+                    //GameObject.Find("Good").GetComponent<AudioSource>().Play();
+                    soundSet.GoodSoundChange();
 					cubeInit.ObstacleCreate();
                     Debug.Log("Good");
                     CM.playerOn = true;
@@ -104,7 +109,8 @@ public class ObstacleScript : MonoBehaviour
                                              //resettext.TextCreate();
                     cubeInit.ObstacleCreate();
                     die.CallDie();
-                    GameObject.Find("Die").GetComponent<AudioSource>().Play();
+                    //GameObject.Find("Die").GetComponent<AudioSource>().Play();
+                    soundSet.DieSoundChange();
                     CM.playerOn = true;
                     Debug.Log("죽었습니다.");
                     playAnimation.DieAnimation();

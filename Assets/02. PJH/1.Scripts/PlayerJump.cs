@@ -14,14 +14,14 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
     float touchnMoveDistance = 0;
 	public PlayerAnimation MyAnimator;
     public LayerMask rayLayerMask;
-	AudioSource audioSource;
-  
+    Music soundSet;
+
     private void Start()
     {
         rig = player.GetComponent<Rigidbody>();
 		MyAnimator = GetComponentInChildren<PlayerAnimation>();
-		audioSource = gameObject.AddComponent<AudioSource>();
-	}
+        soundSet = GameObject.Find("AudioManager").GetComponent<Music>();
+    }
 
     private void FixedUpdate()
     {
@@ -55,7 +55,7 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         if (isjump && jumpT && isGround())
         {
 
-			GameObject.Find("Jump").GetComponent<AudioSource>().Play();
+            soundSet.JumpSoundChange();
 			//Debug.Log("왜소리안나와");
 			rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
 			MyAnimator.JumpAnimaion();

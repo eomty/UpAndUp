@@ -15,6 +15,7 @@ TagManager:
   - ScoreText
   - Extext
   - ObstacleList
+  - FScube
   layers:
   - Default
   - TransparentFX
@@ -26,11 +27,11 @@ TagManager:
   - 
   - PopupCharacter
   - Popup
-  - UI10
-  - UI11
-  - UI12
-  - UI13
-  - UI14
+  - 
+  - 
+  - 
+  - 
+  - 
   - RayCheck
   - 
   - 
@@ -57,4 +58,7 @@ TagManager:
     locked: 0
   - name: 1
     uniqueID: 3722918297
+    locked: 0
+  - name: 2
+    uniqueID: 3960841091
     locked: 0

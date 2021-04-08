@@ -5,13 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class Change_Scene : MonoBehaviour
 {
-
-    private void Awake()
+	public GameObject AudioManager;
+	AudioSource audio;
+	private void Awake()
     {
-        
-    }
+		AudioManager = GameObject.Find("AudioManager");
+		audio = AudioManager.GetComponent<AudioSource>();
+		if (audio.isPlaying) return; //배경음악이 재생되고 있다면 패스
+		else
+		{
+			audio.Play();
+			DontDestroyOnLoad(AudioManager); //배경음악 계속 재생하게(이후 버튼매니저에서 조작)
+		}
+	}
     public void LoadScene(string sceneName)
 	{
+
 		SceneManager.LoadScene(sceneName);
 		Debug.Log($"Loading scene : {sceneName}");
 	}

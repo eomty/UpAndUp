@@ -6,11 +6,9 @@ using UnityEngine.UI;
 public class Change_Menu : MonoBehaviour
 {
     public GameObject Option_C;
-    public GameObject Set_C;
+    //public GameObject Set_C;
     //public GameObject Start_Btn;
 
-    public Slider[] volumeSliders;
-    public AudioClip test1;
     public GameObject image;
 	public GameObject options;
 
@@ -31,14 +29,14 @@ public class Change_Menu : MonoBehaviour
     }
     public void OptionMenu()
     {
-        Set_C.SetActive(false);
+        //Set_C.SetActive(false);
         Option_C.SetActive(true);
 		Time.timeScale = 0f;
     }
 
     public void MainMenu()
     {
-        Set_C.SetActive(true);
+        //Set_C.SetActive(true);
         Option_C.SetActive(false);
 		Time.timeScale = 1f;
     }
@@ -46,7 +44,7 @@ public class Change_Menu : MonoBehaviour
     public void Developer()
     {
         image.SetActive(true);
-		options.SetActive(false);
+		//options.SetActive(false);
         //Start_Btn.SetActive(false);
         //Option_C.SetActive(false);
     }
@@ -59,24 +57,24 @@ public class Change_Menu : MonoBehaviour
 		options.SetActive(true);
     }
 
-    public void TestSound()
-    {
-        AudioManager.instance.PlaySound(test1, transform.position);
-    }
+    //public void TestSound()
+    //{
+    //    AudioManager.instance.PlaySound(test1, transform.position);
+    //}
 
-    public void SetMasterVolume(float value)
-    {
-        AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Master);
-    }
+    //public void SetMasterVolume(float value)
+    //{
+    //    AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Master);
+    //}
 
-    public void SetMusicVolume(float value)
-    {
-        AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Music);
-    }
+    //public void SetMusicVolume(float value)
+    //{
+    //    AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Music);
+    //}
 
-    public void SetSfxVolume(float value)
-    {
-        AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Sfx);
-    }
+    //public void SetSfxVolume(float value)
+    //{
+    //    AudioManager.instance.SetVolume(value, AudioManager.AudioChannel.Sfx);
+    //}
 
 }

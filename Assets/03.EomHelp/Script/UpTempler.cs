@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class UpTempler : MonoBehaviour
 {
     public float speed = 0f;
+    public GameObject SetUI;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +27,7 @@ public class UpTempler : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         speed = 0f;
-        StartCoroutine("MainScene");
+        SetUI.SetActive(true);
     }
 
     IEnumerator MainScene()
