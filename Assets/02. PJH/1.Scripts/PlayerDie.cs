@@ -59,6 +59,6 @@ public class PlayerDie : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         PopopC.SetActive(true);
         //ResultCharacter.SetActive(true);
-        cameraMove.GameEndCameraPosition();
+       // cameraMove.GameEndCameraPosition();
     }
 }
