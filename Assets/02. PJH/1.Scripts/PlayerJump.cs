@@ -32,7 +32,7 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
             switch (touch.phase)
             {
                 case TouchPhase.Began:
-                    if (isjump && isGround())
+                    if (isjump && isGround() &&GameManager.isPlayerDie == false)
                     {
                         MyAnimator.SitAnimation();
                     }
