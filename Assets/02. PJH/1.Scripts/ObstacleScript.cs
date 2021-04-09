@@ -20,7 +20,7 @@ public class ObstacleScript : MonoBehaviour
     AutoActiveFalse autoActiveFalse;
     AutoDestroy autoDestroy;
     Music soundSet;
-
+    int obstacleDestroyHigh;
 
     private void Awake()
     {
@@ -35,6 +35,14 @@ public class ObstacleScript : MonoBehaviour
         playAnimation = GameObject.FindWithTag("Model").GetComponent<PlayerAnimation>();
         playerjump = GameObject.Find("Player").GetComponent<PlayerJump>();
         soundSet = GameObject.Find("AudioManager").GetComponent<Music>();
+        obstacleDestroyHigh = GameManager.high + 20;
+    }
+    private void Update()
+    {
+        if(obstacleDestroyHigh == GameManager.high)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
