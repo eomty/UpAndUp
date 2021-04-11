@@ -69,11 +69,10 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         {
 
             soundSet.JumpSoundChange();
-			//Debug.Log("왜소리안나와");
+
 			rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
 			MyAnimator.JumpAnimaion();
-            //GameManager.reAnimationNum = Random.Range(0, 7);
-            //Debug.Log("reAni: " + GameManager.reAnimationNum);
+            Debug.Log("점프함");
             isjump = false;
             jumpT = false;
             
