@@ -72,7 +72,6 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
 
 			rig.AddForce(Vector3.up * jumpPower * Time.deltaTime, ForceMode.Impulse);
 			MyAnimator.JumpAnimaion();
-            Debug.Log("점프함");
             isjump = false;
             jumpT = false;
             
@@ -86,7 +85,6 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
         if(isjump)
         {
             jumpT = true;
-            //player.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezeRotation;
         }
     }
 
