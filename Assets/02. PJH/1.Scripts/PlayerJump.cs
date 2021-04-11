@@ -54,7 +54,7 @@ public class PlayerJump : MonoBehaviour//, IPointerDownHandler, IPointerUpHandle
                     }
                     jumpPower = touchnMoveDistance;
                     Jump();
-                    GameManager.TextNum = 0;
+                    //GameManager.TextNum = 0;
                     touchnMoveDistance = 0;
                     break;
             }

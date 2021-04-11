@@ -45,6 +45,14 @@ public class ObstacleScript : MonoBehaviour
         }
     }
 
+    public void TextActiveDestroy()
+    {
+        resettext.TextCreate();
+        resettextnum.TextScoreCreate();
+        autoActiveFalse.TextCreate1();
+        autoDestroy.TextCreate2();
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
 
@@ -66,6 +74,8 @@ public class ObstacleScript : MonoBehaviour
                 //Debug.Log(thisRadius);                   //임시로 제거
                 if (distanceCheck <= thisRadius * 0.25)
                 {
+                    TextActiveDestroy();
+
                     soundSet.PerfectSoundChange();
 					//GameObject.Find("Perfect").GetComponent<AudioSource>().Play();
 					cubeInit.ObstacleCreate();
@@ -82,6 +92,8 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else if (distanceCheck <= thisRadius * 0.55)
                 {
+                    TextActiveDestroy();
+
                     //GameObject.Find("Excellent").GetComponent<AudioSource>().Play();
                     soundSet.ExcellentSoundChange();
 					cubeInit.ObstacleCreate();
@@ -97,6 +109,8 @@ public class ObstacleScript : MonoBehaviour
                 }
                 else if (distanceCheck <= thisRadius * 1)
                 {
+                    TextActiveDestroy();
+
                     //GameObject.Find("Good").GetComponent<AudioSource>().Play();
                     soundSet.GoodSoundChange();
 					cubeInit.ObstacleCreate();
@@ -124,10 +138,6 @@ public class ObstacleScript : MonoBehaviour
                     playAnimation.DieAnimation();
                     GameManager.GameDataSave(GameManager.isPlayerDie);
                 }
-                resettext.TextCreate();
-				resettextnum.TextScoreCreate();
-                autoActiveFalse.TextCreate1();
-                autoDestroy.TextCreate2();
 		
 				isDone = true;
             }

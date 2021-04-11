@@ -12,11 +12,19 @@ public class AutoDestroy : MonoBehaviour
     // Start is called before the first frame update
     public void TextCreate2()
     {
-        Invoke("SC", 0.8f);
+        //Invoke("SC", 0.8f);
+        StartCoroutine("WaitForDestroy");
         //autoDestroyed.Active1f();
     }
     public void SC()
     {
+        
+    }
+
+    IEnumerator WaitForDestroy()
+    {
+
+        yield return new WaitForSeconds(0.7f);
         switch (GameManager.TextNum)
         {
             case 1:
@@ -28,31 +36,11 @@ public class AutoDestroy : MonoBehaviour
             case 3:
                 textList3.SetActive(false);
                 break;
-            case 4:
-                Debug.Log("CASE4 X");
-                break;
 
         }
-
-        //if (gameObject.activeSelf == true)
-        //{
-
-        //	StartCoroutine("WaitResult");
-        //}
-        //else
-        //{
-        //	Debug.Log("false");
-        //}
-
+        //    textList1.SetActive(false);
+        //    textList2.SetActive(false);
+        //    textList3.SetActive(false);
     }
-
-    //IEnumerator WaitResult()
-    //{
-
-    //    yield return new WaitForSeconds(2f);
-    //    textList1.SetActive(false);
-    //    textList2.SetActive(false);
-    //    textList3.SetActive(false);
-    //}
 
 }
