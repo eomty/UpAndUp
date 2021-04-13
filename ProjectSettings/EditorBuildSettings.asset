@@ -5,15 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/03.EomHelp/Scenes/PlaySceneback.unity
-    guid: 3affa19b632c6e243bd9775ade995452
-  - enabled: 0
-    path: Assets/03.EomHelp/Scenes/MainScene.unity
-    guid: bf0e98bdd0cb7ad4eb487fbc40a29e7a
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/03.EomHelp/Scenes/FirstScene.unity
     guid: 15f2daa24314a0e4d8a27512c234117b
